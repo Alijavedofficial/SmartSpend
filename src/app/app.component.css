@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    height: 90vh;
+    gap: 40px;
+  }
+  
+  .content {
+    flex: 4;
+
+    
+    background-color: rgb(244, 237, 233);
+    border-radius: 12px;
+    border: 1px solid rgb(203, 203, 203);
+  }
+  
+  .side{
+    flex: 1;
+    background-color: rgb(244, 237, 233);
+    border-radius: 12px;
+    border: 1px solid rgb(203, 203, 203);
+  }
+ 
+
+  .sidelink{
+    padding-right: 12px;
+  }
+  .sidelink i {
+    font-size: 18px;
+  }
