@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 body{
-    
     background-color: aliceblue;
-    overflow: hidden;
     color: #001861;
 }
-
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 input{
     border: 1px solid #dfe1e6;
     border-radius: 4px;

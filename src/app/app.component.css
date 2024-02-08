@@ -1,24 +1,28 @@
 .container {
     display: flex;
-    height: 130vh;
     width: 100%;
-    
+    margin: auto;
   }
   
   .content {
-    flex: 6;
+    flex-grow: 1;
     background-color: aliceblue;
-    width:100%;
-
+    padding-bottom: 50px;
+    overflow-y: auto;
+    padding-left: 240px;
+    width: auto;
   }
   
   .side{
-    flex: 1;
+    width: 220px;
     background-color: #fff;
     padding: 5px;
-    height: 100%;
+    top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y:auto;
+  position: fixed;
   }
- 
 
   .sidelink{
     padding-right: 12px;
@@ -29,8 +33,5 @@
   .sidelink i {
     font-size: 20px;
   }
- .custom-scroll {
-  overflow:auto;
-}
- 
+
   
