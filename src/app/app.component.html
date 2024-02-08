@@ -2,27 +2,25 @@
     <div class="side">
 
   <div class="flex px-5 py-8 gap-4 items-center">
-    <img class="rounded-full w-16" src="https://img.freepik.com/free-photo/3d-illustration-teenager-with-funny-face-glasses_1142-50955.jpg?size=626&ext=jpg&ga=GA1.1.161877072.1706307699&semt=sph" />
-   <div>
-    <h1>JOHN</h1>
-    <p>Your Money</p>
-</div> 
+   <img src=".././assets/logo-no-background.png" />
   </div>
 
-<ul class="p-5 ">
-    <li class="py-1"><span class="sidelink"><i class="fa-solid fa-chart-line"></i></span><a routerLink="/dashboard">DashBoard</a></li>
-    <li class="py-1"><span class="sidelink"><i class="fa-solid fa-wallet"></i></span><a routerLink="/transactions">View Transactions</a></li>
-    <li class="py-1"><span class="sidelink"><i class="fa-solid fa-money-bill-trend-up "></i></span><a routerLink="/income">Income</a></li>
-    <li class="py-1"><span class="sidelink"><i class="fa-solid fa-money-bill-wave"></i></span><a routerLink="/expense">Expense</a></li>
+<ul class="p-5 py-8">
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-chart-line"></i></span><a routerLink="/dashboard">DashBoard</a></li>
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-wallet"></i></span><a routerLink="/transactions">View Transactions</a></li>
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-money-bill-trend-up "></i></span><a routerLink="/income">Income</a></li>
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-money-bill-wave"></i></span><a routerLink="/expense">Expense</a></li>
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-user"></i></span><a>Profile</a></li>
+    <li class="py-2"><span class="sidelink"><i class="fa-solid fa-lock"></i></span><a routerLink="/signin">Sign In</a></li>
 </ul>
 
 <div class="fixed bottom-12 px-5">
-    <span class="sidelink"><i class="fa-solid fa-right-from-bracket"></i></span><a>Sign Out</a>
+    <span class="sidelink"><i class="fa-solid fa-right-from-bracket"></i></span><a routerLink="/signin">Sign Out</a>
 </div>
 </div>
 
 
-<div class="content">
+<div class="content" [ngClass]="{'custom-scroll': shouldEnableScrollbar}">
 <router-outlet></router-outlet>
 </div>
 </div>

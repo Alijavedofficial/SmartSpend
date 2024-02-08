@@ -1,29 +1,36 @@
 .container {
     display: flex;
-    height: 90vh;
-    gap: 40px;
+    height: 130vh;
+    width: 100%;
+    
   }
   
   .content {
-    flex: 4;
+    flex: 6;
+    background-color: aliceblue;
+    width:100%;
 
-    
-    background-color: rgb(244, 237, 233);
-    border-radius: 12px;
-    border: 1px solid rgb(203, 203, 203);
   }
   
   .side{
     flex: 1;
-    background-color: rgb(244, 237, 233);
-    border-radius: 12px;
-    border: 1px solid rgb(203, 203, 203);
+    background-color: #fff;
+    padding: 5px;
+    height: 100%;
   }
  
 
   .sidelink{
     padding-right: 12px;
   }
-  .sidelink i {
-    font-size: 18px;
+  .sidelink a{
+    font-size: 20px;
   }
+  .sidelink i {
+    font-size: 20px;
+  }
+ .custom-scroll {
+  overflow:auto;
+}
+ 
+  

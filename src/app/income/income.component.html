@@ -1,33 +1,37 @@
 <div class="p-8">
     <h1 class="text-[33px] font-bold pb-3">Incomes</h1>
 <div class="p-4 items-center justify-center text-center bg-white rounded-3xl" style="border: 1px solid rgb(203, 203, 203);">
-    <h1 class="text-[30px] font-semibold">Total Income: <span  class="text-[#36802d] font-bold">$152590</span></h1>
+    <h1 class="text-[30px] font-semibold">Total Income: <span  class="text-[#36802d] font-bold">{{ totalIncome | currency }}</span></h1>
 </div>
 <div class="flex gap-10">
-<div class="flex flex-col w-1/3 pt-3">
-    <input type="text" placeholder="Salary Title"/>
-    <input type="text" placeholder="Salary Amount"/>
-    <input type="date" placeholder="Enter Date"/>
-    <select>
+<form class="flex flex-col w-1/3 pt-3" [formGroup]="incomeForm">
+    <input type="text" placeholder="Income Title" formControlName="incomeTitle" id="incomeTitle"/>
+    <input type="number" placeholder="Income Amount" formControlName="incomeAmount" id="incomeAmount"/>
+    <input type="date" placeholder="Enter Date" formControlName="incomeDate" id="incomeDate"/>
+    <select formControlName="incomeCategory" id="incomeCategory">
+        <option value="" disabled>Select Income Type</option>
         <option>freelance</option>
         <option>business</option>
         <option>salary</option>
     </select>
-    <textarea placeholder="Add a Reference"></textarea>
+    <textarea placeholder="Add a Reference" formControlName="incomeDescription" id="incomeDescription"></textarea>
 
-    <button class="w-1/3"><i class="fa-solid fa-plus"></i>Add Income</button>
-</div>
+    <button class="bg-green-600 my-4" (click)="addIncome()"><i class="fa-solid fa-plus"></i>Add Income</button>
+</form>
 
-<div class="flex flex-col w-2/3 bg-white pt-3">
-    <div class="p-4">
-        <h1>Shopify</h1>
+<div class="flex flex-col w-2/3 pt-3" >
+    <div class="flex flex-col" *ngFor="let income of displayedIncomeData">
+    <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4">
+        <span class="rounded-full bg-gray-100 text-[26px] px-4 py-2"><i class="fa-solid fa-globe"></i></span>
+        <div>
+        <h1 class="text-[20px] font-semibold pb-1">{{income.incomeTitle}}</h1>
+        <div class="flex gap-4">
+        <p class="text-[17px] font-normal"><i class="fa-solid fa-dollar-sign mr-1"></i>{{income.incomeAmount}}</p>
+        <p class="text-[17px] font-normal"><i class="fa-regular fa-calendar-days mr-1"></i>{{income.incomeDate}}</p>
+        <p class="text-[17px] font-normal"><i class="fa-solid fa-comment mr-1"></i>{{income.incomeDescription}}</p>
+        </div>
     </div>
-    <div class="p-4">
-        <h1>Shopify</h1>
-    </div>
-    <div class="p-4">
-        <h1>Shopify</h1>
-    </div>
+    </div></div>
 </div>
 </div>
 </div>

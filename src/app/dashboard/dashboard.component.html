@@ -1,8 +1,133 @@
-<div style="display: block;">
-    <canvas baseChart
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [legend]="lineChartLegend"
-           ></canvas>
+
+<div class="flex justify-between px-8 py-6">
+  <h1 class="text-[40px] font-bold pb-3">Dashboard</h1>
+  <div
+    class="bg-white flex gap-6 rounded-s-full rounded-e-full px-4 items-center justify-center"
+  >
+    <div class="group mt-4">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input placeholder="Search" type="search" class="input" />
+    </div>
+    <i class="fa-regular fa-bell text-[20px] opacity-75" ></i>
+    <i class="fa-solid fa-moon text-[20px] opacity-75"></i>
+    <img
+      class="rounded-full w-[36px] object-cover h-3/6"
+      src="https://framerusercontent.com/images/gMHfU4xaMiq7jHpCpTNtqnK6ulQ.jpg"
+    />
   </div>
+</div>
+
+<div class="px-4 justify-start">
+  <div class="flex gap-4 w-full justify-center items-center px-0 flex-wrap">
+    <div
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5" 
+    >
+      <span
+        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
+        ><i class="fa-solid fa-chart-simple"></i
+      ></span>
+      <h1 class="text-[28px] font-semibold">
+        <p class="opacity-75 text-[17px] font-normal">Balance</p>
+       <span class="font-bold">$</span><span #counter1  class="font-bold"></span>
+      </h1>
+    </div>
+
+    <div
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+    >
+      <span
+        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
+        ><i class="fa-solid fa-sack-dollar"></i
+      ></span>
+      <h1 class="text-[26px] font-semibold">
+        <p class="opacity-75 text-[17px] font-normal">Income</p>
+        <span  class="font-bold"></span><span #counter2 class="font-bold">{{ totalIncome | currency }}</span>
+      </h1>
+    </div>
+    <div
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+    >
+      <span
+        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
+        ><i class="fa-solid fa-sack-dollar"></i
+      ></span>
+      <h1 class="text-[26px] font-semibold">
+        <p class="opacity-75 text-[17px] font-normal">Expense</p>
+        <span class="font-bold">$</span><span #counter3  class="font-bold"></span>
+      </h1>
+    </div>
+    <div
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+    >
+      <span
+        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
+        ><i class="fa-solid fa-dollar-sign"></i
+      ></span>
+      <h1 class="text-[26px] font-semibold">
+        <p class="opacity-75 text-[17px] font-normal">Highest Income</p>
+        <span class="font-bold">$</span><span #counter4 class="font-bold"></span>
+      </h1>
+    </div>
+    <div
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+    >
+      <span
+        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
+        ><i class="fa-solid fa-dollar-sign"></i
+      ></span>
+      <h1 class="text-[26px] font-semibold">
+        <p class="opacity-75 text-[17px] font-normal">Highest Expense</p>
+        <span class="font-bold">$</span><span #counter5 class="font-bold"></span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="flex gap-5 mx-5" >
+    <div class="bg-white p-1 rounded-xl mt-6 w-full" >
+      <div class="flex p-4 justify-between">
+        <h1 class="text-[18px] font-bold pb-3">Income VS Expense</h1>
+        <span class="text-[#009bd6] font-light text-[20px]"
+          ><i class="fa-solid fa-chart-simple"></i
+        ></span>
+      </div>
+      <app-linechart></app-linechart>
+    </div>
+
+    <div class="bg-white rounded-xl mt-6 w-full">
+      <div class="flex p-4 justify-between">
+        <h1 class="text-[18px] font-bold pb-3">Monthly Income</h1>
+        <span class="text-[#009bd6] font-light text-[20px]"
+          ><i class="fa-solid fa-chart-simple"></i
+        ></span>
+      </div>
+      <app-barchart></app-barchart>
+    </div>
+  </div>
+
+  <div class="mt-6 flex gap-5 w-full">
+    <div class="bg-white rounded-xl mt-3 w-1/2">
+      <h1 class="text-[25px] font-bold pb-3">Recent History</h1>
+    </div>
+
+    <div class="w-1/2 flex gap-5">
+      <div class="bg-white rounded-xl mt-3 w-1/2">
+        <div class="flex p-4 justify-between">
+          <h1 class="text-[18px] font-bold pb-3">Monthly Expense</h1>
+          <span class="text-[#009bd6] font-light text-[20px]"
+            ><i class="fa-solid fa-chart-simple"></i
+          ></span>
+        </div>
+        <app-expensebarchart></app-expensebarchart>
+      </div>
+      <div class="bg-white rounded-xl mt-3 w-1/2">
+        <div class="flex p-4 justify-between">
+          <h1 class="text-[18px] font-bold pb-3">Your Pie Chart</h1>
+          <span class="text-[#009bd6] font-light text-[20px]"
+            ><i class="fa-solid fa-chart-simple"></i
+          ></span>
+        </div>
+        <app-donutchart></app-donutchart>
+      </div>
+    </div>
+  </div>
+</div>
