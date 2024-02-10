@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
 import { IncomedataService } from '../incomedata.service';
+import { CalculationsService } from '../calculations.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +9,38 @@ import { IncomedataService } from '../incomedata.service';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements AfterViewInit,OnInit{
-totalIncome: number = 0;
+  totalExpense: number = 0;
+  totalIncome: number = 0;
+  totalBalance:number = 0;
+  highestIncome: number = 0;
+  highestExpense: number = 0;
 
-constructor(private incomedataservice:IncomedataService){
+constructor(private incomedataservice:IncomedataService,private calculationService:CalculationsService){
 }
 
 ngOnInit(): void {
-    this.totalIncome = this.incomedataservice.TotalIncome;
+    this.calculateTotalExpense();
+    this.calculateTotalIncome();
+    this.calculateTotalBalance();
+    this.calculateHighestIncome();
+    this.calculateHighestExpense();
 }
 
+calculateTotalExpense() {
+  this.totalExpense = this.calculationService.calculateTotalExpense();
+}
+calculateTotalIncome() {
+  this.totalIncome = this.calculationService.calculateTotalIncome();
+}
+calculateTotalBalance() {
+  this.totalBalance = this.totalIncome - this.totalExpense;
+}
+calculateHighestIncome() {
+  this.highestIncome = this.calculationService.calculateHighestIncome();
+}
+calculateHighestExpense() {
+  this.highestExpense = this.calculationService.calculateHighestExpense();
+}
 
 
   @ViewChild('counter1') counter1Element!: ElementRef;
@@ -31,21 +55,15 @@ ngOnInit(): void {
   counter4!: CountUp;
   counter5!: CountUp;
 
-  counter1Value = 152000;
-  counter2Value = 215200;
-  counter3Value = 125000;
-  counter4Value = 7550;
-  counter5Value = 8670;
-
  ngAfterViewInit(): void {
   const options: CountUpOptions = {
     duration: 2, 
   };
-  this.counter1 = new CountUp(this.counter1Element.nativeElement, this.counter1Value, options);
-  this.counter2 = new CountUp(this.counter2Element.nativeElement, this.counter2Value, options);
-  this.counter3 = new CountUp(this.counter3Element.nativeElement, this.counter3Value, options);
-  this.counter4 = new CountUp(this.counter4Element.nativeElement, this.counter4Value, options);
-  this.counter5 = new CountUp(this.counter5Element.nativeElement, this.counter5Value, options);
+  this.counter1 = new CountUp(this.counter1Element.nativeElement, this.totalBalance, options);
+  this.counter2 = new CountUp(this.counter2Element.nativeElement, this.totalIncome, options);
+  this.counter3 = new CountUp(this.counter3Element.nativeElement, this.totalExpense, options);
+  this.counter4 = new CountUp(this.counter4Element.nativeElement, this.highestIncome, options);
+  this.counter5 = new CountUp(this.counter5Element.nativeElement, this.highestExpense, options);
 
   this.counter1.start();
   this.counter2.start();

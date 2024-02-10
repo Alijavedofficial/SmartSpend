@@ -1,8 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IncomedataService } from '../incomedata.service';
-
-
+import { CalculationsService } from '../calculations.service';
 @Component({
   selector: 'app-income',
   templateUrl: './income.component.html',
@@ -14,8 +13,9 @@ incomeForm!: FormGroup;
 totalIncome: any;
 displayedIncomeData: any[] = [];
 IncomeData: any[] = [];
+highestIncome: number = 0;
 
-constructor(private fb: FormBuilder,private incomedataservice:IncomedataService) {
+constructor(private fb: FormBuilder,private incomedataservice:IncomedataService,private calculationService: CalculationsService) {
   this.incomeForm = this.fb.group({
     incomeTitle: [''],
     incomeAmount: [''],
@@ -26,12 +26,11 @@ constructor(private fb: FormBuilder,private incomedataservice:IncomedataService)
   this.IncomeData = this.incomedataservice.getIncomeData();
   this.calculateTotalIncome();
   this.displayedIncomeData = this.IncomeData.slice(-4);
-   
-  
 }
 
 ngOnInit(): void {
-    this.incomedataservice.TotalIncome = this.totalIncome;
+    this.incomedataservice.TotalIncome = this.calculationService.totalIncome;
+    this.calculateHighestIncome();
 }
 addIncome() {
   const data = this.incomeForm.value;
@@ -39,6 +38,7 @@ addIncome() {
 
   this.incomeForm.reset();
   this.calculateTotalIncome();
+  this.calculateHighestIncome()
   this.displayedIncomeData.push(data);
   if(this.displayedIncomeData.length = 4){
   this.displayedIncomeData.pop();
@@ -47,7 +47,9 @@ addIncome() {
 }
 
 calculateTotalIncome() {
-  
-  this.totalIncome = this.IncomeData.reduce((total, income) => total + parseInt(income.incomeAmount, 10), 0);
+  this.totalIncome = this.calculationService.calculateTotalIncome();
+}
+calculateHighestIncome() {
+  this.highestIncome = this.calculationService.calculateHighestIncome()
 }
 }

@@ -6,32 +6,88 @@ import { Injectable } from '@angular/core';
 export class IncomedataService {
 public TotalIncome: number = 0;
   
-  private displayedIncomeData: any[] = [
+  public displayedIncomeData: any[] = [
     {
       incomeTitle: 'Salary',
       incomeAmount: 9000,
-      incomeDate: '2022-01-01',
+      incomeDate: '2024-01-01',
       incomeCategory: 'Job',
       incomeDescription: 'Monthly salary',
     },
     {
       incomeTitle: 'Freelance Project',
       incomeAmount: 5000,
-      incomeDate: '2022-02-15',
+      incomeDate: '2024-02-15',
       incomeCategory: 'Freelance',
       incomeDescription: 'Web development project',
     },
     {
       incomeTitle: 'Social Media',
       incomeAmount: 6000,
-      incomeDate: '2022-02-15',
+      incomeDate: '2023-03-15',
       incomeCategory: 'Social Media',
       incomeDescription: 'Social Media',
     },
     {
       incomeTitle: 'Shopify',
       incomeAmount: 12000,
-      incomeDate: '2022-02-15',
+      incomeDate: '2023-04-15',
+      incomeCategory: 'Shopify',
+      incomeDescription: 'Shopify Income',
+    },
+    {
+      incomeTitle: 'Salary',
+      incomeAmount: 9000,
+      incomeDate: '2023-05-01',
+      incomeCategory: 'Job',
+      incomeDescription: 'Monthly salary',
+    },
+    {
+      incomeTitle: 'Freelance Project',
+      incomeAmount: 5000,
+      incomeDate: '2023-06-15',
+      incomeCategory: 'Freelance',
+      incomeDescription: 'Web development project',
+    },
+    {
+      incomeTitle: 'Social Media',
+      incomeAmount: 6000,
+      incomeDate: '2023-07-15',
+      incomeCategory: 'Social Media',
+      incomeDescription: 'Social Media',
+    },
+    {
+      incomeTitle: 'Shopify',
+      incomeAmount: 12000,
+      incomeDate: '2023-08-15',
+      incomeCategory: 'Shopify',
+      incomeDescription: 'Shopify Income',
+    },
+    {
+      incomeTitle: 'Salary',
+      incomeAmount: 9000,
+      incomeDate: '2023-09-01',
+      incomeCategory: 'Job',
+      incomeDescription: 'Monthly salary',
+    },
+    {
+      incomeTitle: 'Freelance Project',
+      incomeAmount: 5000,
+      incomeDate: '2023-10-15',
+      incomeCategory: 'Freelance',
+      incomeDescription: 'Web development project',
+    },
+    {
+      incomeTitle: 'Social Media',
+      incomeAmount: 6000,
+      incomeDate: '2023-11-15',
+      incomeCategory: 'Social Media',
+      incomeDescription: 'Social Media',
+    },
+    {
+      incomeTitle: 'Shopify',
+      incomeAmount: 12000,
+      incomeDate: '2023-12-15',
       incomeCategory: 'Shopify',
       incomeDescription: 'Shopify Income',
     },

@@ -17,47 +17,47 @@
   </div>
 </div>
 
-<div class="px-4 justify-start">
-  <div class="flex gap-4 w-full justify-center items-center px-0 flex-wrap">
+<div class="px-4">
+  <div class="flex gap-3 w-full items-center px-0 justify-start">
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5" 
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full" 
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-chart-simple"></i
       ></span>
       <h1 class="text-[28px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Balance</p>
-       <span class="font-bold">$</span><span #counter1  class="font-bold"></span>
+        <p class="opacity-75 text-[17px] font-normal">Total Balance</p>
+    <span class="font-bold">$</span><span #counter1 class="font-bold">{{ totalBalance | number }}</span>
       </h1>
     </div>
 
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
       <h1 class="text-[26px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Income</p>
-        <span  class="font-bold"></span><span #counter2 class="font-bold">{{ totalIncome | currency }}</span>
+        <p class="opacity-75 text-[17px] font-normal">Total Income</p>
+        <span class="font-bold">$</span><span #counter2 class="font-bold">{{totalIncome | number}}</span>
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
       <h1 class="text-[26px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Expense</p>
-        <span class="font-bold">$</span><span #counter3  class="font-bold"></span>
+        <p class="opacity-75 text-[17px] font-normal">Total Expense</p>
+        <span class="font-bold">$</span><span #counter3 class="font-bold">{{totalExpense | number}}</span>
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -65,11 +65,11 @@
       ></span>
       <h1 class="text-[26px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Highest Income</p>
-        <span class="font-bold">$</span><span #counter4 class="font-bold"></span>
+        <span class="font-bold">$</span><span #counter4 class="font-bold">{{highestIncome | number}}</span>
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5"
+      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -77,7 +77,7 @@
       ></span>
       <h1 class="text-[26px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Highest Expense</p>
-        <span class="font-bold">$</span><span #counter5 class="font-bold"></span>
+        <span class="font-bold">$</span><span #counter5 class="font-bold">{{highestExpense | number}}</span>
       </h1>
     </div>
   </div>

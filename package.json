@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "angular-highcharts": "^17.0.0",
+    "angular-highcharts": "^17.0.1",
     "chart.js": "^4.4.1",
     "countup.js": "^2.8.0",
     "highcharts": "^11.3.0",
