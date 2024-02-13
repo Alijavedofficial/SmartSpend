@@ -85,21 +85,15 @@ export class LinechartComponent implements OnInit {
         enabled: false,
       },
       xAxis: {
-        categories: [
-          'jan',
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'June',
-          'July',
-          'August',
-          'Sept',
-          'Oct',
-          'Nov',
-          'Dec',
-        ],
+        categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL','AUG','SEP','OCT','NOV','DEC'],
         lineWidth: 0,
+        labels: {
+          style: {
+            fontSize: '10px', 
+            fontWeight: 'semibold',
+            color: '#818589',
+          }
+        },
       },
       yAxis: {
         title: {
@@ -117,19 +111,24 @@ export class LinechartComponent implements OnInit {
           marker: {
             enabled: false,
           },
+          animation: {
+            duration: 1500,
+          },
+          tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: ${point.y}',
+          }
         },
       },
       series: [
         {
           name: 'Income',
           data: this.incomeData,
-          borderColor: 'green',
           color: '#4663ac',
         },
         {
           name: 'Expenses',
           data: this.expenseData,
-          borderColor: 'red',
           color: '#009bd6',
         },
       ] as any,

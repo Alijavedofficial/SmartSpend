@@ -1,13 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import * as Highcharts from 'highcharts';
 
 @Component({
   selector: 'app-donutchart',
   templateUrl: './donutchart.component.html',
   styleUrl: './donutchart.component.css'
 })
-export class DonutchartComponent {
- piechart = new Chart({
+export class DonutchartComponent implements OnInit {
+ 
+  pieChart: Highcharts.Chart;
+  expenseData: number[] = [];
+
+
+
+ngOnInit(): void {
+    this.initializeChart();
+    this.updateChartData();
+}
+
+updateChartData(): void {
+    
+}
+
+private initializeChart() {
+ this.pieChart = Highcharts.chart('piechart', {
   chart: {
     type: 'pie',
     plotShadow: false,
@@ -49,5 +66,5 @@ export class DonutchartComponent {
       ],
     },
   ],
-})
+})}
 }

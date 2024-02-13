@@ -3,14 +3,14 @@
     width: 100%;
     margin: auto;
   }
-  
   .content {
     flex-grow: 1;
     background-color: aliceblue;
     padding-bottom: 50px;
     overflow-y: auto;
+    padding-right: 15px;
     padding-left: 240px;
-    width: auto;
+    width: 100%;
   }
   
   .side{

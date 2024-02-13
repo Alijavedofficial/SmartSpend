@@ -22,6 +22,13 @@ public TotalIncome: number = 0;
       incomeDescription: 'Web development project',
     },
     {
+      incomeTitle: 'Rental Income',
+      incomeAmount: 2000,
+      incomeDate: '2024-02-15',
+      incomeCategory: 'Freelance',
+      incomeDescription: 'Web development project',
+    },
+    {
       incomeTitle: 'Social Media',
       incomeAmount: 6000,
       incomeDate: '2023-03-15',
@@ -95,7 +102,9 @@ public TotalIncome: number = 0;
   addIncomeData(data: any) {
     this.displayedIncomeData.push(data);
   }
-
+  deleteIncomeData(index: number) {
+     this.displayedIncomeData.splice(index, 1);
+  }
   getIncomeData() {
     return this.displayedIncomeData;
   }

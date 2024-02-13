@@ -57,7 +57,7 @@ calculateHighestExpense() {
 
  ngAfterViewInit(): void {
   const options: CountUpOptions = {
-    duration: 2, 
+    duration: 1, 
   };
   this.counter1 = new CountUp(this.counter1Element.nativeElement, this.totalBalance, options);
   this.counter2 = new CountUp(this.counter2Element.nativeElement, this.totalIncome, options);

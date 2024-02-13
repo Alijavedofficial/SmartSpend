@@ -32,7 +32,14 @@ constructor(private fb: FormBuilder,private expensedataservice:ExpensedataServic
 ngOnInit(): void {{
   this.expensedataservice.TotalExpense = this.calculationService.totalExpense;
   this.calculateHighestExpense();
+  this.defaultDate();
 }}
+
+defaultDate() {
+  const currentDate = new Date();
+  const formattedDate = this.formatDate(currentDate);
+  this.expenseForm.get('expenseDate')?.patchValue(formattedDate);
+}
 
 addExpense() {
   const data = this.expenseForm.value;
@@ -51,5 +58,13 @@ calculateTotalExpense() {
 }
 calculateHighestExpense() {
   this.highestExpense = this.calculationService.calculateHighestExpense();
+}
+formatDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = ('0' + (date.getMonth() + 1)).slice(-2);
+  const day = ('0' + date.getDate()).slice(-2);
+
+  return `${year}-${month}-${day}`;
+  
 }
 }

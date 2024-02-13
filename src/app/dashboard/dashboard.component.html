@@ -18,9 +18,9 @@
 </div>
 
 <div class="px-4">
-  <div class="flex gap-3 w-full items-center px-0 justify-start">
+  <div class="flex gap-3 w-full items-center px-0 justify-start flex-row">
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full" 
+      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full" 
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -33,7 +33,7 @@
     </div>
 
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
+      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -45,7 +45,7 @@
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
+      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -57,7 +57,7 @@
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
+      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -69,7 +69,7 @@
       </h1>
     </div>
     <div
-      class="py-3 px-6 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
+      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
     >
       <span
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
@@ -83,20 +83,19 @@
   </div>
 
   <div class="flex gap-5" >
-    <div class="bg-white p-1 rounded-xl mt-6 w-full" >
+    <div class="bg-white p-1 rounded-xl mt-6 w-5/6" >
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Income VS Expense</h1>
-        <span class="text-[#009bd6] font-light text-[20px]"
-          ><i class="fa-solid fa-chart-simple"></i
-        ></span>
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
+          ><i class="fa-solid fa-chart-line"></i></span>
       </div>
       <app-linechart></app-linechart>
     </div>
 
-    <div class="bg-white rounded-xl mt-6 w-full">
+    <div class="bg-white rounded-xl mt-6 w-3/6">
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Monthly Income</h1>
-        <span class="text-[#009bd6] font-light text-[20px]"
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
           ><i class="fa-solid fa-chart-simple"></i
         ></span>
       </div>
@@ -104,29 +103,62 @@
     </div>
   </div>
 
-  <div class="mt-6 flex gap-5 w-full">
-    <div class="bg-white rounded-xl mt-3 w-1/2">
-      <h1 class="text-[25px] font-bold pb-3">Recent History</h1>
+  <div class="mt-2 flex gap-5 w-full">
+    <div class="bg-white rounded-xl mt-3 w-[50%] p-4">
+    
+      <div class="flex  justify-between">
+        <h1 class="text-[18px] font-bold pb-3">Recent History</h1>
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1.5 px-2.5"
+          > <i class="fa-solid fa-clock-rotate-left"></i></span>
+      </div>
+      <div>
+        <table>
+          <tr class="border-b-2 border-gray-200">
+            <th style="padding: 14px 70px 14px 30px;">Name</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+          <tbody>
+            <tr>
+              <td style="padding: 14px 70px 16px 30px;">Salary</td>
+              <td>Income</td>
+              <td>$5000</td>
+              <td>12/2/2023</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="w-1/2 flex gap-5">
-      <div class="bg-white rounded-xl mt-3 w-1/2">
+    <div class="w-[50%] flex gap-5">
+      <div class="bg-white rounded-xl mt-3 w-[50%]">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Monthly Expense</h1>
-          <span class="text-[#009bd6] font-light text-[20px]"
+          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
             ><i class="fa-solid fa-chart-simple"></i
           ></span>
         </div>
         <app-expensebarchart></app-expensebarchart>
       </div>
-      <div class="bg-white rounded-xl mt-3 w-1/2">
+      <div class="bg-white rounded-xl mt-3 w-[50%]">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Your Pie Chart</h1>
-          <span class="text-[#009bd6] font-light text-[20px]"
-            ><i class="fa-solid fa-chart-simple"></i
-          ></span>
+          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2"
+            ><i class="fa-solid fa-chart-pie"></i>
+          </span>
         </div>
         <app-donutchart></app-donutchart>
+        <div class="flex py-2 justify-evenly">
+          <div class="flex flex-col">
+            <span class="text-[#818589]">Shopping</span>
+            <span class="text-center">43%</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[#818589]">Grocery</span>
+            <span class="text-center">38%</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
