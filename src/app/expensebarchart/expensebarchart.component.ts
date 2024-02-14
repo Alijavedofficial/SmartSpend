@@ -21,32 +21,51 @@ export class ExpensebarchartComponent implements OnInit {
   }
 
   updateChartData():void {
-      const expenseByMonth: {[key: string]: number} = {};
-
-      this.expensedataservice.getExpenseData().forEach(expense => {
-        const date = new Date(expense.expenseDate);
-        const monthKey = `${date.getFullYear()/2}-${date.getMonth() + 1}`;
-        expenseByMonth[monthKey] = (expenseByMonth[monthKey] || 0) + expense.expenseAmount;
-      })
-
-      const allMonths = new Set([
-        ...Object.keys(expenseByMonth)
-      ])
-
-      const expenseData: number[] = [];
-      allMonths.forEach(month => {
-        expenseData.push(expenseByMonth[month] || 0);
-      })
-
-      this.expenseChart.update({
-        series:[
-          {
-            type:'bar',
-            name:'Expense',
-            data: expenseData
+    const currentDate = new Date();
+    const lastSixMonthsCategories: string[] = [];
+    const expenseData: number[] = [];
+  
+    
+    for (let i = 5; i >= 0; i--) {
+      const date = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
+      lastSixMonthsCategories.push(date.toLocaleString('default', { month: 'short' }));
+    }
+  
+    
+    for (let i = 0; i < 6; i++) {
+      expenseData.push(0);
+    }
+  
+    
+    this.expensedataservice.getExpenseData().forEach(expense => {
+      const date = new Date(expense.expenseDate);
+      const monthIndex = date.getMonth();
+      const monthDiff = (currentDate.getMonth() - monthIndex + 12) % 12;
+  
+      if (monthDiff < 6) {
+        expenseData[monthDiff] += expense.expenseAmount;
+      }
+    });
+  
+    lastSixMonthsCategories.reverse();
+    this.expenseChart.update({
+      xAxis: {
+        categories: lastSixMonthsCategories,
+        lineWidth: 0,
+        labels: {
+          style: {
+            fontSize: '11px',
+            fontWeight: 'semibold',
+            color: '#818589',
           }
-        ]
-      })
+        },
+      },
+      series: [{
+        type: 'bar',
+        name: 'Expense',
+        data: expenseData
+      }]
+    });
   }
 
   private initializeChart():void {
@@ -66,7 +85,7 @@ export class ExpensebarchartComponent implements OnInit {
         lineWidth: 0,
         labels: {
           style: {
-            fontSize: '9px', 
+            fontSize: '10px', 
             fontWeight: 'semibold',
             color: '#818589',
           }
@@ -74,7 +93,7 @@ export class ExpensebarchartComponent implements OnInit {
       },
     plotOptions: {
         bar: {
-          pointWidth: 13,
+          pointWidth: 15,
           pointPadding:10, 
           groupPadding: 1,
           borderRadius: 20,
@@ -82,8 +101,8 @@ export class ExpensebarchartComponent implements OnInit {
             duration: 1500,
           },
           tooltip: {
-            headerFormat: '<b>{point.x}</b><br/>',
-            pointFormat: '{series.name}: ${point.y}',
+            headerFormat: '<span style="font-size: 14px; color: #4663ac; font-weight: bold;  justify-content: center;">{point.x}</span><br/>',
+            pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
           }
         }
       },

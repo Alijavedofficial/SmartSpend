@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ExpensedataService {
  public TotalExpense: number = 0;
-  private displayedExpenseData: any[]= [
+  public displayedExpenseData: any[]= [
     {
       expenseTitle: 'Rent',
       expenseAmount: 4000,
@@ -15,7 +15,14 @@ export class ExpensedataService {
     },
     {
       expenseTitle: 'Bills',
-      expenseAmount: 2200,
+      expenseAmount: 2000,
+      expenseDate: '2024-01-01',
+      expenseCategory: 'rent',
+      expenseDescription: 'Monthly Rent of my apartment',
+    },
+    {
+      expenseTitle: 'Bills',
+      expenseAmount: 1200,
       expenseDate: '2024-02-15',
       expenseCategory: 'bills',
       expenseDescription: 'Monthly bills that include electricity, water, gas, phone, etc',
@@ -29,7 +36,7 @@ export class ExpensedataService {
     },
     {
       expenseTitle: 'Shopping',
-      expenseAmount: 2700,
+      expenseAmount: 1700,
       expenseDate: '2024-02-15',
       expenseCategory: 'bills',
       expenseDescription: 'Monthly bills that include electricity, water, gas, phone, etc',

@@ -65,16 +65,16 @@ cancelDelete(): void {
 }
 
 addIncome() {
-  const data = this.incomeForm.value;
-  this.incomedataservice.addIncomeData(data);
+  const newIncome = this.incomeForm.value;
+  this.incomedataservice.addIncomeData(newIncome);
 
   this.incomeForm.reset();
   this.calculateTotalIncome();
   this.calculateHighestIncome()
-  this.displayedIncomeData.push(data);
+  this.displayedIncomeData.push(newIncome);
   if(this.displayedIncomeData.length = 4){
   this.displayedIncomeData.pop();
-  this.displayedIncomeData.unshift(data);
+  this.displayedIncomeData.unshift(newIncome);
 } 
 }
 
@@ -90,6 +90,7 @@ formatDate(date: Date): string {
   const month = ('0' + (date.getMonth() + 1)).slice(-2);
   const day = ('0' + date.getDate()).slice(-2);
   return `${year}-${month}-${day}`;
+  
 }
 
 }

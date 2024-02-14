@@ -26,7 +26,7 @@
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-chart-simple"></i
       ></span>
-      <h1 class="text-[28px] font-semibold">
+      <h1 class="text-[25px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Total Balance</p>
     <span class="font-bold">$</span><span #counter1 class="font-bold">{{ totalBalance | number }}</span>
       </h1>
@@ -39,7 +39,7 @@
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
-      <h1 class="text-[26px] font-semibold">
+      <h1 class="text-[25px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Total Income</p>
         <span class="font-bold">$</span><span #counter2 class="font-bold">{{totalIncome | number}}</span>
       </h1>
@@ -51,7 +51,7 @@
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
-      <h1 class="text-[26px] font-semibold">
+      <h1 class="text-[25px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Total Expense</p>
         <span class="font-bold">$</span><span #counter3 class="font-bold">{{totalExpense | number}}</span>
       </h1>
@@ -63,7 +63,7 @@
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-dollar-sign"></i
       ></span>
-      <h1 class="text-[26px] font-semibold">
+      <h1 class="text-[25px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Highest Income</p>
         <span class="font-bold">$</span><span #counter4 class="font-bold">{{highestIncome | number}}</span>
       </h1>
@@ -75,7 +75,7 @@
         class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
         ><i class="fa-solid fa-dollar-sign"></i
       ></span>
-      <h1 class="text-[26px] font-semibold">
+      <h1 class="text-[25px] font-semibold">
         <p class="opacity-75 text-[17px] font-normal">Highest Expense</p>
         <span class="font-bold">$</span><span #counter5 class="font-bold">{{highestExpense | number}}</span>
       </h1>
@@ -83,6 +83,7 @@
   </div>
 
   <div class="flex gap-5" >
+
     <div class="bg-white p-1 rounded-xl mt-6 w-5/6" >
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Income VS Expense</h1>
@@ -113,19 +114,21 @@
       </div>
       <div>
         <table>
-          <tr class="border-b-2 border-gray-200">
-            <th style="padding: 14px 70px 14px 30px;">Name</th>
+          <tr class="border-b border-gray-300">
+            <th style="padding: 14px 60px 14px 30px;">Name</th>
             <th>Status</th>
             <th>Amount</th>
             <th>Date</th>
           </tr>
-          <tbody>
-            <tr>
-              <td style="padding: 14px 70px 16px 30px;">Salary</td>
-              <td>Income</td>
-              <td>$5000</td>
-              <td>12/2/2023</td>
+          <tbody *ngIf="recentTransactions.length > 0">
+            <tr *ngFor="let transaction of recentTransactions">
+              <td style="padding: 14px 70px 16px 30px;">{{ transaction.type === 'income' ? transaction.expenseTitle : transaction.incomeTitle  }}</td>
+              <td class="text-green-700">{{ transaction.type === 'income' ? 'Expense': 'Income' }}</td>
+              <td class="text-green-700">${{ transaction.type === 'income' ? transaction.expenseAmount : transaction.incomeAmount }}</td>
+              <td>{{ transaction.type === 'income' ? transaction.expenseDate : transaction.incomeDate }}</td>
             </tr>
+          
+            
           </tbody>
         </table>
       </div>
@@ -152,11 +155,11 @@
         <div class="flex py-2 justify-evenly">
           <div class="flex flex-col">
             <span class="text-[#818589]">Shopping</span>
-            <span class="text-center">43%</span>
+            <span class="text-center font-bold text-[18px]">43%</span>
           </div>
           <div class="flex flex-col">
             <span class="text-[#818589]">Grocery</span>
-            <span class="text-center">38%</span>
+            <span class="text-center font-bold text-[18px]">38%</span>
           </div>
         </div>
       </div>

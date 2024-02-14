@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { CountUp, CountUpOptions } from 'countup.js';
 import { IncomedataService } from '../incomedata.service';
 import { CalculationsService } from '../calculations.service';
+import { ExpensedataService } from '../expensedata.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,8 +15,11 @@ export class DashboardComponent implements AfterViewInit,OnInit{
   totalBalance:number = 0;
   highestIncome: number = 0;
   highestExpense: number = 0;
+  recentIncomes: any[] = [];
+  recentExpenses: any[] = [];
+  recentTransactions: any[] = [];
 
-constructor(private incomedataservice:IncomedataService,private calculationService:CalculationsService){
+constructor(private incomedataservice:IncomedataService,private calculationService:CalculationsService,private expensedataservice:ExpensedataService) {
 }
 
 ngOnInit(): void {
@@ -24,6 +28,21 @@ ngOnInit(): void {
     this.calculateTotalBalance();
     this.calculateHighestIncome();
     this.calculateHighestExpense();
+    this.loadRecentData();
+}
+
+loadRecentData(): void {
+  // Get the most recent income data and limit to 4 entries
+  const allIncomeData = this.incomedataservice.getIncomeData();
+  this.recentIncomes = allIncomeData.slice(Math.max(allIncomeData.length - 4, 0));
+
+  // Get the most recent expense data and limit to 4 entries
+  const allExpenseData = this.expensedataservice.getExpenseData();
+  this.recentExpenses = allExpenseData.slice(Math.max(allExpenseData.length - 4, 0));
+
+  const allTransactions = [...this.recentIncomes,...this.recentExpenses];
+  allTransactions.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  this.recentTransactions = allTransactions.slice(0, 4);
 }
 
 calculateTotalExpense() {

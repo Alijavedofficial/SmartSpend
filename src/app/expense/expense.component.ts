@@ -42,14 +42,16 @@ defaultDate() {
 }
 
 addExpense() {
-  const data = this.expenseForm.value;
-  this.expensedataservice.addExpenseData(data);
+  const newExpense = this.expenseForm.value;
+  this.expensedataservice.addExpenseData(newExpense);
+
   this.expenseForm.reset();
   this.calculateTotalExpense();
-  this.displayedExpenseData.push(data);
-  if(this.displayedExpenseData.length = 4){
-    this.displayedExpenseData.pop();
-    this.displayedExpenseData.unshift(data);
+  this.calculateHighestExpense();
+  this.displayedExpenseData.push(newExpense);
+  if(this.displayedExpenseData.length = 4) {
+    this.displayedExpenseData.pop()
+    this.displayedExpenseData.unshift(newExpense);
   }
 }
 

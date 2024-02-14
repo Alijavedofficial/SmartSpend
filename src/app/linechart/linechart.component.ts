@@ -41,7 +41,7 @@ export class LinechartComponent implements OnInit {
     });
 
     const allMonths = new Set([
-      ...Object.keys(incomeByMonth),
+      
       ...Object.keys(expenseByMonth),
     ]);
 
@@ -115,8 +115,8 @@ export class LinechartComponent implements OnInit {
             duration: 1500,
           },
           tooltip: {
-            headerFormat: '<b>{point.x}</b><br/>',
-            pointFormat: '{series.name}: ${point.y}',
+            headerFormat: '<span style="font-size: 14px; color: #4663ac; font-weight: bold;  justify-content: center;">{point.x}</span><br/>',
+            pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
           }
         },
       },

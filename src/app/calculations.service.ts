@@ -14,14 +14,6 @@ export class CalculationsService {
   highestIncome: number = 0;
   highestExpense: number = 0;
 
-  calculateTotals(incomes: number[], expenses: number[]): void {
-    this.totalIncome = incomes.reduce((acc, curr) => acc + curr, 0);
-    this.totalExpense = expenses.reduce((acc, curr) => acc + curr, 0);
-    this.totalBalance = this.totalIncome - this.totalExpense;
-    this.highestIncome = Math.max(...incomes);
-    this.highestExpense = Math.max(...expenses);
-  }
-
   constructor(private expensedataservice: ExpensedataService,private incomedataservice: IncomedataService) { }
 
   calculateTotalExpense(): number {

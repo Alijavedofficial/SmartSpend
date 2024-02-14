@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
+import { ExpensedataService } from '../expensedata.service';
 
 @Component({
   selector: 'app-donutchart',
@@ -12,6 +13,7 @@ export class DonutchartComponent implements OnInit {
   pieChart: Highcharts.Chart;
   expenseData: number[] = [];
 
+  constructor(private expensedataservice: ExpensedataService) {}
 
 
 ngOnInit(): void {
@@ -20,7 +22,32 @@ ngOnInit(): void {
 }
 
 updateChartData(): void {
-    
+    const expenseByMonth: { [key: string]: number } = {};
+
+    this.expensedataservice.getExpenseData().forEach(expense => {
+      const date = new Date(expense.expenseDate);
+      const monthKey = `${date.getMonth() + 1}`;
+      expenseByMonth[monthKey] = (expenseByMonth[monthKey] || 0) + expense.expenseAmount;
+    })
+
+    const allMonths = new Set([
+      ...Object.keys(expenseByMonth),
+    ])
+
+    const expenseData: number[] = [];
+    allMonths.forEach(month => {
+      expenseData.push(expenseByMonth[month] || 0);
+    })
+
+    this.pieChart.update({
+      series: [
+        {
+          type: 'pie',
+          name: 'Expense',
+          data: expenseData
+        }
+      ]
+    })
 }
 
 private initializeChart() {
@@ -43,6 +70,10 @@ private initializeChart() {
       dataLabels: {
         enabled: false,
       },
+      tooltip: {
+        headerFormat: '<span style="font-size: 14px; font-weight: bold;color:#4663ac">{point.key}</span><br/>',
+       pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
+      }
     },
   },
   title: {
