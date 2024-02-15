@@ -11,11 +11,12 @@ export class IncomeComponent implements OnInit {
 
 incomeForm!: FormGroup;
 totalIncome: any;
-displayedIncomeData: any[] = [];
+
 IncomeData: any[] = [];
 highestIncome: number = 0;
 showConfirmationIndex: number | null = null;
 incomeToDelete: any;
+recentIncomes: any[] = [];
 
 constructor(private fb: FormBuilder,private incomedataservice:IncomedataService,private calculationService: CalculationsService) {
   this.incomeForm = this.fb.group({
@@ -26,9 +27,7 @@ constructor(private fb: FormBuilder,private incomedataservice:IncomedataService,
     incomeDescription: ['']
   });
   this.IncomeData = this.incomedataservice.getIncomeData();
-  this.calculateTotalIncome();
-  this.displayedIncomeData = this.IncomeData.slice(-4);
-  
+  this.calculateTotalIncome();   
   
 }
 
@@ -36,6 +35,19 @@ ngOnInit(): void {
     this.incomedataservice.TotalIncome = this.calculationService.totalIncome;
     this.calculateHighestIncome();
     this.defaultDate();
+    this.loadRecentIncome();
+}
+
+loadRecentIncome(): void {
+  const allIncomeData = this.incomedataservice.IncomeData.slice(); 
+  
+ 
+  const sortedIncomeData = allIncomeData.sort((a, b) => {
+    return new Date(b.incomeDate).getTime() - new Date(a.incomeDate).getTime();
+  });
+
+   
+  this.recentIncomes = sortedIncomeData.slice(0, 4);
 }
 
 private defaultDate() {
@@ -50,13 +62,15 @@ confirmDelete(income: any, index: number): void {
 }
 
 deleteIncome(): void {
-  const index = this.displayedIncomeData.indexOf(this.incomeToDelete);
+  const index = this.recentIncomes.indexOf(this.incomeToDelete);
   
   if (index !== -1) {
-    this.displayedIncomeData.splice(index, 1);
-    this.IncomeData.splice(index,1)
+    this.incomedataservice.deleteIncomeData(this.incomeToDelete);
+    this.recentIncomes.splice(index, 1);
+    
     this.showConfirmationIndex = null; 
    this.calculateTotalIncome();
+   this.calculateHighestIncome();
    
   } 
 }
@@ -71,10 +85,11 @@ addIncome() {
   this.incomeForm.reset();
   this.calculateTotalIncome();
   this.calculateHighestIncome()
-  this.displayedIncomeData.push(newIncome);
-  if(this.displayedIncomeData.length = 4){
-  this.displayedIncomeData.pop();
-  this.displayedIncomeData.unshift(newIncome);
+  
+  this.recentIncomes.push(newIncome);
+  if(this.recentIncomes.length = 4){
+  this.recentIncomes.pop();
+  this.recentIncomes.unshift(newIncome);
 } 
 }
 

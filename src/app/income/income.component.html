@@ -19,7 +19,7 @@
     <button class="bg-green-600 my-4" (click)="addIncome()"><i class="fa-solid fa-plus"></i>Add Income</button>
 </form>
 <div class="flex flex-col w-2/3 pt-3">
-    <div class="flex flex-col" *ngFor="let income of displayedIncomeData; let i = index">
+    <div class="flex flex-col" *ngFor="let income of recentIncomes; let i = index">
       <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4">
         <span class="rounded-full bg-gray-100 text-[26px] px-4 py-2"><i class="fa-solid fa-globe"></i></span>
         <div>

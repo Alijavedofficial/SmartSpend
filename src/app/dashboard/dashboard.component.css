@@ -57,14 +57,15 @@
       text-align: start;
     }
     table tr td {
-      padding: 0px 30px;
+      padding: 10px 30px;
       text-align: center;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 500;
       justify-content: start;
       align-items: center;
       text-align: start;
     }
+  
    
    
    

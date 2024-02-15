@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class IncomedataService {
 public TotalIncome: number = 0;
   
-  public displayedIncomeData: any[] = [
+  public IncomeData: any[] = [
     {
       incomeTitle: 'Salary',
       incomeAmount: 9000,
@@ -15,16 +15,16 @@ public TotalIncome: number = 0;
       incomeDescription: 'Monthly salary',
     },
     {
-      incomeTitle: 'Freelance Project',
+      incomeTitle: 'Freelance',
       incomeAmount: 5000,
-      incomeDate: '2024-02-15',
+      incomeDate: '2024-02-01',
       incomeCategory: 'Freelance',
       incomeDescription: 'Web development project',
     },
     {
-      incomeTitle: 'Rental Income',
+      incomeTitle: 'Salary',
       incomeAmount: 2000,
-      incomeDate: '2024-02-15',
+      incomeDate: '2024-02-02',
       incomeCategory: 'Freelance',
       incomeDescription: 'Web development project',
     },
@@ -100,13 +100,13 @@ public TotalIncome: number = 0;
     },
   ];
   addIncomeData(data: any) {
-    this.displayedIncomeData.push(data);
+    this.IncomeData.push(data);
   }
   deleteIncomeData(index: number) {
-     this.displayedIncomeData.splice(index, 1);
+     this.IncomeData.splice(index, 1);
   }
   getIncomeData() {
-    return this.displayedIncomeData;
+    return this.IncomeData;
   }
 
   

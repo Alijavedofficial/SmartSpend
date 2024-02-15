@@ -32,18 +32,23 @@ ngOnInit(): void {
 }
 
 loadRecentData(): void {
-  // Get the most recent income data and limit to 4 entries
-  const allIncomeData = this.incomedataservice.getIncomeData();
-  this.recentIncomes = allIncomeData.slice(Math.max(allIncomeData.length - 4, 0));
+  // Get all income and expense data
+  const allIncomeData = this.incomedataservice.IncomeData;
+  const allExpenseData = this.expensedataservice.displayedExpenseData;
 
-  // Get the most recent expense data and limit to 4 entries
-  const allExpenseData = this.expensedataservice.getExpenseData();
-  this.recentExpenses = allExpenseData.slice(Math.max(allExpenseData.length - 4, 0));
+  // Combine income and expense data into one array
+  const allTransactions = [
+    ...allIncomeData.map(income => ({ ...income, type: 'income' })),
+    ...allExpenseData.map(expense => ({ ...expense, type: 'expense' }))
+  ];
 
-  const allTransactions = [...this.recentIncomes,...this.recentExpenses];
-  allTransactions.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  this.recentTransactions = allTransactions.slice(0, 4);
+  // Sort transactions by date in descending order
+  allTransactions.sort((a, b) => new Date(b.incomeDate || b.expenseDate).getTime() - new Date(a.incomeDate || a.expenseDate).getTime());
+
+  // Get the latest four transactions
+  this.recentTransactions = allTransactions.slice(0, 5);
 }
+
 
 calculateTotalExpense() {
   this.totalExpense = this.calculationService.calculateTotalExpense();

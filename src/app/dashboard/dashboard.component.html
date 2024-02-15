@@ -122,14 +122,13 @@
           </tr>
           <tbody *ngIf="recentTransactions.length > 0">
             <tr *ngFor="let transaction of recentTransactions">
-              <td style="padding: 14px 70px 16px 30px;">{{ transaction.type === 'income' ? transaction.expenseTitle : transaction.incomeTitle  }}</td>
-              <td class="text-green-700">{{ transaction.type === 'income' ? 'Expense': 'Income' }}</td>
-              <td class="text-green-700">${{ transaction.type === 'income' ? transaction.expenseAmount : transaction.incomeAmount }}</td>
-              <td>{{ transaction.type === 'income' ? transaction.expenseDate : transaction.incomeDate }}</td>
+              <td>{{ transaction.type === 'income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
+              <td [ngStyle]="{'color': transaction.type === 'income' ? 'green' : 'red'}">{{ transaction.type }}</td>
+              <td [ngStyle]="{'color': transaction.type === 'income' ? 'green' : 'red'}">${{ transaction.type === 'income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
+              <td>{{ transaction.type === 'income' ? transaction.incomeDate : transaction.expenseDate }}</td>
             </tr>
-          
-            
           </tbody>
+          
         </table>
       </div>
     </div>

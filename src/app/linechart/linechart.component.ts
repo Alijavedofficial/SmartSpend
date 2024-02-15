@@ -41,7 +41,7 @@ export class LinechartComponent implements OnInit {
     });
 
     const allMonths = new Set([
-      
+      ...Object.keys(incomeByMonth),
       ...Object.keys(expenseByMonth),
     ]);
 

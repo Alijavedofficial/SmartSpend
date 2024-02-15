@@ -23,21 +23,21 @@ export class ExpensedataService {
     {
       expenseTitle: 'Bills',
       expenseAmount: 1200,
-      expenseDate: '2024-02-15',
+      expenseDate: '2024-02-01',
       expenseCategory: 'bills',
       expenseDescription: 'Monthly bills that include electricity, water, gas, phone, etc',
     },
     {
       expenseTitle: 'Rent',
       expenseAmount: 2200,
-      expenseDate: '2024-02-15',
+      expenseDate: '2024-02-02',
       expenseCategory: 'bills',
       expenseDescription: 'Monthly bills that include electricity, water, gas, phone, etc',
     },
     {
       expenseTitle: 'Shopping',
       expenseAmount: 1700,
-      expenseDate: '2024-02-15',
+      expenseDate: '2024-02-03',
       expenseCategory: 'bills',
       expenseDescription: 'Monthly bills that include electricity, water, gas, phone, etc',
     },
@@ -127,12 +127,12 @@ export class ExpensedataService {
     },
   ];
 
-  addExpenseData(data: any) {
-    this.displayedExpenseData.push(data);
-  }
-  getExpenseData() {
-    return this.displayedExpenseData;
-  }
+ addExpenseData(expense: any) {
+  this.displayedExpenseData.push(expense);
+ }
 
+ getExpenseData() {
+  return this.displayedExpenseData;
+ }
 
 }
