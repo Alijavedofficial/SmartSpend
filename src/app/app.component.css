@@ -5,7 +5,7 @@
   }
   .content {
     flex-grow: 1;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
     padding-bottom: 50px;
     overflow-y: auto;
     padding-right: 15px;

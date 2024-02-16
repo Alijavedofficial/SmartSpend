@@ -26,7 +26,7 @@
 <div class="flex flex-col w-2/3 pt-3">
     <div class="flex flex-col" *ngFor="let income of recentIncomes; let i = index">
       <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4">
-        <span class="rounded-full bg-gray-100 px-2 py-2 items-center">
+        <span class="rounded-full bg-[#f0f8ff] px-2 py-2 items-center">
           <img [src]="getCategoryImage(income.incomeCategory)" alt="Income Icon" class="w-[40px] h-auto object-cover" />
         </span>
       
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="right-16 absolute">
-          <span class="rounded-full bg-gray-100 text-[26px] px-4 py-4 flex justify-end items-center cursor-pointer" (click)="confirmDelete(income, i)"><i class="fa-solid fa-trash text-[#FF0000]"></i></span>
+          <span class="rounded-full bg-[#f0f8ff] text-[26px] px-4 py-4 flex justify-end items-center cursor-pointer" (click)="confirmDelete(income, i)"><i class="fa-solid fa-trash text-[#FF0000]"></i></span>
         </div>
       </div>
      
