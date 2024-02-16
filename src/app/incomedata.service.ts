@@ -88,15 +88,15 @@ public TotalIncome: number = 0;
       incomeTitle: 'Social Media',
       incomeAmount: 6000,
       incomeDate: '2023-11-15',
-      incomeCategory: 'Social Media',
-      incomeDescription: 'Social Media',
+      incomeCategory: 'socialmedia',
+      incomeDescription: 'Social Media Income',
     },
     {
-      incomeTitle: 'Shopify',
+      incomeTitle: 'Social Media',
       incomeAmount: 12000,
       incomeDate: '2023-12-15',
       incomeCategory: 'socialmedia',
-      incomeDescription: 'Shopify Income',
+      incomeDescription: 'Social Media Income',
     },
   ];
   addIncomeData(data: any) {

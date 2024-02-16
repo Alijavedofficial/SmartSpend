@@ -18,6 +18,7 @@ highestExpense: number = 0;
 showConfirmationIndex: number | null = null;
 expenseToDelete: any;
 recentExpenses: any[] = [];
+selectedCategory: string;
 
 constructor(private fb: FormBuilder,private expensedataservice:ExpensedataService,private calculationService:CalculationsService) {
  this.expenseForm = this.fb.group({
@@ -107,4 +108,41 @@ formatDate(date: Date): string {
   return `${year}-${month}-${day}`;
   
 }
+
+getCategoryImage(category:string): string | undefined {
+  if(category === 'grocery') {
+    return '../../assets/Categories/cart.png';
+  }
+  else if(category === 'shopping') {
+    return '../../assets/Categories/shopping.png';
+  }
+  else if(category === 'rent') {
+    return '../../assets/Categories/pngwing.com (1).png';
+  }
+  else if(category === 'bills') {
+    return '../../assets/Categories/pngwing.com (1).png';
+  }
+  else if(category === 'installment') {
+    return '../../assets/Categories/pngwing.com (1).png';
+  }
+  else if(category === 'health') {
+    return '../../assets/Categories/health.png';
+  }
+  else if(category === 'education') {
+    return '../../assets/Categories/education.png';
+  }
+  else if(category === 'investment') {
+    return '../../assets/Categories/dollar-icon-png-3543.png';
+  }
+  else if(category === 'personal') {
+    return '../../assets/Categories/personal.png';
+  }
+  else if(category === 'other') {
+    return '../../assets/Categories/pngwing.com (1).png';
+  }
+  else {
+    return undefined;
+  }
+}
+
 }
