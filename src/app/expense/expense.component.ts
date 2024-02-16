@@ -15,6 +15,9 @@ totalExpense: any;
 displayedExpenseData: any[] = [];
 ExpenseData: any[] = [];
 highestExpense: number = 0;
+showConfirmationIndex: number | null = null;
+expenseToDelete: any;
+recentExpenses: any[] = [];
 
 constructor(private fb: FormBuilder,private expensedataservice:ExpensedataService,private calculationService:CalculationsService) {
  this.expenseForm = this.fb.group({
@@ -26,14 +29,25 @@ constructor(private fb: FormBuilder,private expensedataservice:ExpensedataServic
  });
  this.ExpenseData = this.expensedataservice.getExpenseData();
  this.calculateTotalExpense();
- this.displayedExpenseData = this.ExpenseData.slice(-4);
+ 
 }
 
 ngOnInit(): void {{
   this.expensedataservice.TotalExpense = this.calculationService.totalExpense;
   this.calculateHighestExpense();
   this.defaultDate();
+  this.loadRecentExpense();
 }}
+
+loadRecentExpense(): void {
+  const allExpenseData = this.expensedataservice.ExpenseData.slice();
+
+  const sortedExpenseData = allExpenseData.sort((a,b) => {
+    return new Date(b.expenseDate).getTime() - new Date(a.expenseDate).getTime();
+  })
+
+  this.recentExpenses = sortedExpenseData.slice(0,4);
+}
 
 defaultDate() {
   const currentDate = new Date();
@@ -41,17 +55,41 @@ defaultDate() {
   this.expenseForm.get('expenseDate')?.patchValue(formattedDate);
 }
 
+deleteExpense() {
+  const index = this.ExpenseData.indexOf(this.expenseToDelete);
+  const index2 = this.recentExpenses.indexOf(this.expenseToDelete);
+
+  if(index !== -1 && index2 !== -1) {
+   this.ExpenseData.splice(index,1);
+   this.recentExpenses.splice(index2,1);
+   this.showConfirmationIndex = null;
+   this.calculateTotalExpense();
+   this.calculateHighestExpense();
+  }
+}
+
+confirmDelete(expense:any, index: number): void {
+  this.showConfirmationIndex = index;
+  this.expenseToDelete = expense;
+}
+
+cancelDelete(): void {
+  this.showConfirmationIndex = null;
+}
+
 addExpense() {
   const newExpense = this.expenseForm.value;
   this.expensedataservice.addExpenseData(newExpense);
 
   this.expenseForm.reset();
+  this.defaultDate();
   this.calculateTotalExpense();
   this.calculateHighestExpense();
-  this.displayedExpenseData.push(newExpense);
-  if(this.displayedExpenseData.length = 4) {
-    this.displayedExpenseData.pop()
-    this.displayedExpenseData.unshift(newExpense);
+
+  this.ExpenseData.push(newExpense);
+  if(this.recentExpenses.length = 4) {
+    this.recentExpenses.pop()
+    this.recentExpenses.unshift(newExpense);
   }
 }
 

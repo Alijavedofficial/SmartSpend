@@ -34,7 +34,7 @@ ngOnInit(): void {
 loadRecentData(): void {
   // Get all income and expense data
   const allIncomeData = this.incomedataservice.IncomeData;
-  const allExpenseData = this.expensedataservice.displayedExpenseData;
+  const allExpenseData = this.expensedataservice.ExpenseData;
 
   // Combine income and expense data into one array
   const allTransactions = [

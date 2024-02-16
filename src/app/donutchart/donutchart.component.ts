@@ -22,33 +22,48 @@ ngOnInit(): void {
 }
 
 updateChartData(): void {
-    const expenseByMonth: { [key: string]: number } = {};
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1; // Month is zero-based, so add 1
 
-    this.expensedataservice.getExpenseData().forEach(expense => {
-      const date = new Date(expense.expenseDate);
-      const monthKey = `${date.getMonth() + 1}`;
-      expenseByMonth[monthKey] = (expenseByMonth[monthKey] || 0) + expense.expenseAmount;
-    })
+  // Filter expenses for the current month
+  const currentMonthExpenses = this.expensedataservice.getExpenseData().filter(expense => {
+    const date = new Date(expense.expenseDate);
+    return date.getMonth() + 1 === currentMonth; // Check if expense date is in the current month
+  });
 
-    const allMonths = new Set([
-      ...Object.keys(expenseByMonth),
-    ])
+  // Calculate total expenses for the current month
+  const totalExpenseForMonth = currentMonthExpenses.reduce((total, expense) => {
+    return total + expense.expenseAmount;
+  }, 0);
 
-    const expenseData: number[] = [];
-    allMonths.forEach(month => {
-      expenseData.push(expenseByMonth[month] || 0);
-    })
+  // Create data points for each expense category in the current month
+  const expenseData = currentMonthExpenses.map(expense => {
+    return {
+      name: expense.expenseTitle,
+      y: expense.expenseAmount,
+      color: this.getRandomColor() // You can define this function to get a random color
+    };
+  });
 
-    this.pieChart.update({
-      series: [
-        {
-          type: 'pie',
-          name: 'Expense',
-          data: expenseData
-        }
-      ]
-    })
+  // Update the pie chart with the expenses for the current month
+  this.pieChart.update({
+    series: [{
+      type: 'pie',
+      name: 'Expense',
+      data: expenseData
+    }]
+  });
 }
+
+getRandomColor():string {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 
 private initializeChart() {
  this.pieChart = Highcharts.chart('piechart', {
@@ -68,7 +83,13 @@ private initializeChart() {
       slicedOffset: 0,
       borderRadius: 0,
       dataLabels: {
-        enabled: false,
+        enabled: true,
+        format: '{point.percentage:.1f}%',
+        distance: -30, // Adjust label position as needed
+        style: {
+          fontWeight: 'bold',
+          color: 'white'
+        }
       },
       tooltip: {
         headerFormat: '<span style="font-size: 14px; font-weight: bold;color:#4663ac">{point.key}</span><br/>',

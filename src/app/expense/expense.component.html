@@ -20,7 +20,7 @@
 </form>
 
 <div class="flex flex-col w-2/3 pt-3">
-    <div class="flex flex-col" *ngFor="let expense of displayedExpenseData">
+    <div class="flex flex-col" *ngFor="let expense of recentExpenses; let i = index">
     <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4" >
         <span class="rounded-full bg-gray-100 text-[26px] px-4 py-2"><i class="fa-solid fa-globe"></i></span>
         <div>
@@ -30,8 +30,20 @@
         <p class="text-[17px] font-normal"><i class="fa-regular fa-calendar-days mr-1"></i>{{expense.expenseDate}}</p>
         <p class="text-[17px] font-normal"><i class="fa-solid fa-comment mr-1"></i>{{expense.expenseDescription}}</p>
         </div>
+        </div>
+        <div class="right-16 absolute">
+            <span class="rounded-full bg-gray-100 text-[26px] px-4 py-4 flex justify-end items-center cursor-pointer" (click)="confirmDelete(expense, i)"><i class="fa-solid fa-trash text-[#FF0000]"></i></span>
+          </div>
     </div>
-    </div></div>
+   
+
+
+    <div *ngIf="showConfirmationIndex === i" class="confirmation bg-red-600">
+        Are you sure you want to delete {{ expenseToDelete?.incomeTitle }}?
+        <button (click)="deleteExpense()">Yes</button>
+        <button (click)="cancelDelete()">No</button>
+      </div> </div>
 </div>
 </div>
 </div>
+
