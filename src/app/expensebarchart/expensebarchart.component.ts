@@ -62,7 +62,7 @@ export class ExpensebarchartComponent implements OnInit {
       },
       series: [{
         type: 'bar',
-        name: 'Expense',
+        name: 'Spendings',
         data: expenseData
       }]
     });
@@ -102,7 +102,7 @@ export class ExpensebarchartComponent implements OnInit {
           },
           tooltip: {
             headerFormat: '<span style="font-size: 14px; color: #4663ac; font-weight: bold;  justify-content: center;">{point.x}</span><br/>',
-            pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
+            pointFormat: '<span style="font-weight: bold">{series.name}:</span> <span style="font-weight: bold;color:red">${point.y}</span><br/>',
           }
         }
       },
@@ -118,7 +118,7 @@ export class ExpensebarchartComponent implements OnInit {
       }
     },
     series: [{
-      name: 'Expense',
+      name: 'Spendings',
       data: this.expenseData,
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },

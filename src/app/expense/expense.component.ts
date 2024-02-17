@@ -87,9 +87,9 @@ addExpense() {
   this.calculateTotalExpense();
   this.calculateHighestExpense();
 
-  this.ExpenseData.push(newExpense);
-  if(this.recentExpenses.length = 4) {
-    this.recentExpenses.pop()
+  this.recentExpenses.push(newExpense);
+  if((this.recentExpenses.length = 4)) {
+    this.recentExpenses.pop() 
     this.recentExpenses.unshift(newExpense);
   }
 }

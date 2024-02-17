@@ -35,6 +35,13 @@ export class ExpensedataService {
       expenseDescription: 'Shopping expenses',
     },
     {
+      expenseTitle: 'Education',
+      expenseAmount: 2300,
+      expenseDate: '2024-02-10',
+      expenseCategory: 'education',
+      expenseDescription: 'Education Expenses',
+    },
+    {
       expenseTitle: 'Health Care',
       expenseAmount: 1700,
       expenseDate: '2024-02-03',

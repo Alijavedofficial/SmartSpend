@@ -23,46 +23,58 @@ ngOnInit(): void {
 
 updateChartData(): void {
   const currentDate = new Date();
-  const currentMonth = currentDate.getMonth() + 1; // Month is zero-based, so add 1
+  const currentMonth = currentDate.getMonth() + 1;
 
-  // Filter expenses for the current month
+ 
   const currentMonthExpenses = this.expensedataservice.getExpenseData().filter(expense => {
     const date = new Date(expense.expenseDate);
-    return date.getMonth() + 1 === currentMonth; // Check if expense date is in the current month
+    return date.getMonth() + 1 === currentMonth; 
   });
 
-  // Calculate total expenses for the current month
+  
   const totalExpenseForMonth = currentMonthExpenses.reduce((total, expense) => {
     return total + expense.expenseAmount;
   }, 0);
 
-  // Create data points for each expense category in the current month
+  
   const expenseData = currentMonthExpenses.map(expense => {
     return {
       name: expense.expenseTitle,
       y: expense.expenseAmount,
-      color: this.getRandomColor() // You can define this function to get a random color
+      color: this.getRandomColor() 
     };
   });
 
-  // Update the pie chart with the expenses for the current month
+  
   this.pieChart.update({
     series: [{
       type: 'pie',
-      name: 'Expense',
+      name: 'Cost',
       data: expenseData
     }]
   });
 }
 
-getRandomColor():string {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+getRandomColor(): string {
+  const baseColor = [0, 155, 214]; // RGB values of base color #009bd6
+
+  // Adjust brightness to create shades (0% to 100%)
+  const brightness = Math.floor(Math.random() * 50) + 50; // Random brightness value between 50 and 100
+
+  // Convert RGB values to hexadecimal color code
+  const hexColor = this.rgbToHex(
+    Math.round((baseColor[0] * brightness) / 100),
+    Math.round((baseColor[1] * brightness) / 100),
+    Math.round((baseColor[2] * brightness) / 100)
+  );
+
+  return hexColor;
 }
+
+rgbToHex(r: number, g: number, b: number): string {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
 
 
 private initializeChart() {
@@ -85,7 +97,7 @@ private initializeChart() {
       dataLabels: {
         enabled: true,
         format: '{point.percentage:.1f}%',
-        distance: -30, // Adjust label position as needed
+        distance: -30, 
         style: {
           fontWeight: 'bold',
           color: 'white'
@@ -93,7 +105,7 @@ private initializeChart() {
       },
       tooltip: {
         headerFormat: '<span style="font-size: 14px; font-weight: bold;color:#4663ac">{point.key}</span><br/>',
-       pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
+       pointFormat: '<span style="font-weight: bold">{series.name}:</span> <span style="font-weight: bold;color:red">${point.y}</span><br/>',
       }
     },
   },

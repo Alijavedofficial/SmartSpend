@@ -27,7 +27,7 @@
         ><i class="fa-solid fa-chart-simple"></i
       ></span>
       <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Balance</p>
+        <p class="opacity-75 text-[17px] font-normal">Total Savings</p>
     <span class="font-bold">$</span><span #counter1 class="font-bold">{{ totalBalance | number }}</span>
       </h1>
     </div>
@@ -40,7 +40,7 @@
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
       <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Income</p>
+        <p class="opacity-75 text-[17px] font-normal">Total Earnings</p>
         <span class="font-bold">$</span><span #counter2 class="font-bold">{{totalIncome | number}}</span>
       </h1>
     </div>
@@ -52,7 +52,7 @@
         ><i class="fa-solid fa-sack-dollar"></i
       ></span>
       <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Expense</p>
+        <p class="opacity-75 text-[17px] font-normal">Total Outlay</p>
         <span class="font-bold">$</span><span #counter3 class="font-bold">{{totalExpense | number}}</span>
       </h1>
     </div>
@@ -86,7 +86,7 @@
 
     <div class="bg-white p-1 rounded-xl mt-6 w-5/6" >
       <div class="flex p-4 justify-between">
-        <h1 class="text-[18px] font-bold pb-3">Income VS Expense</h1>
+        <h1 class="text-[18px] font-bold pb-3">Gainings VS Spendings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
           ><i class="fa-solid fa-chart-line"></i></span>
       </div>
@@ -122,10 +122,10 @@
           </tr>
           <tbody *ngIf="recentTransactions.length > 0">
             <tr *ngFor="let transaction of recentTransactions">
-              <td>{{ transaction.type === 'income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
-              <td [ngStyle]="{'color': transaction.type === 'income' ? 'green' : 'red'}">{{ transaction.type }}</td>
-              <td [ngStyle]="{'color': transaction.type === 'income' ? 'green' : 'red'}">${{ transaction.type === 'income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
-              <td>{{ transaction.type === 'income' ? transaction.incomeDate : transaction.expenseDate }}</td>
+              <td>{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
+              <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
+              <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
+              <td>{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
             </tr>
           </tbody>
           
@@ -136,7 +136,7 @@
     <div class="w-[50%] flex gap-5">
       <div class="bg-white rounded-xl mt-3 w-[50%]">
         <div class="flex p-4 justify-between">
-          <h1 class="text-[18px] font-bold pb-3">Monthly Expense</h1>
+          <h1 class="text-[18px] font-bold pb-3">Monthly Spendings</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
             ><i class="fa-solid fa-chart-simple"></i
           ></span>
@@ -145,7 +145,7 @@
       </div>
       <div class="bg-white rounded-xl mt-3 w-[50%]">
         <div class="flex p-4 justify-between">
-          <h1 class="text-[18px] font-bold pb-3">Your Pie Chart</h1>
+          <h1 class="text-[18px] font-bold pb-3">Outlay This Month</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2"
             ><i class="fa-solid fa-chart-pie"></i>
           </span>

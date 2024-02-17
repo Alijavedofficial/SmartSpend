@@ -57,13 +57,13 @@ export class LinechartComponent implements OnInit {
       series: [
         {
           type: 'line',
-          name: 'Income',
+          name: 'Gainings',
           data: incomeData,
           borderColor: 'green',
           color: '#4663ac',
         },{
           type: 'line',
-          name: 'Expenses',
+          name: 'Spendings',
           data: expenseData,
           borderColor: 'red',
           color: '#009bd6',
@@ -122,12 +122,12 @@ export class LinechartComponent implements OnInit {
       },
       series: [
         {
-          name: 'Income',
+          name: 'Gainings',
           data: this.incomeData,
           color: '#4663ac',
         },
         {
-          name: 'Expenses',
+          name: 'Spendings',
           data: this.expenseData,
           color: '#009bd6',
         },

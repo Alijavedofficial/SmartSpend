@@ -37,7 +37,7 @@ public TotalIncome: number = 0;
     },
     {
       incomeTitle: 'Shopify',
-      incomeAmount: 12000,
+      incomeAmount: 8000,
       incomeDate: '2023-04-15',
       incomeCategory: 'Shopify',
       incomeDescription: 'Shopify Income',
@@ -99,16 +99,12 @@ public TotalIncome: number = 0;
       incomeDescription: 'Social Media Income',
     },
   ];
-  addIncomeData(data: any) {
-    this.IncomeData.push(data);
-  }
-  deleteIncomeData(index: number) {
-     this.IncomeData.splice(index, 1);
+  addIncomeData(income: any) {
+    this.IncomeData.push(income);
   }
   getIncomeData() {
     return this.IncomeData;
   }
 
-  
 
 }
