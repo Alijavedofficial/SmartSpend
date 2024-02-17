@@ -41,7 +41,7 @@ export class BarchartComponent implements OnInit {
         series:[
           {
             type:'bar',
-            name:'Income',
+            name:'Revenue',
             data:incomeData
           }
         ]
@@ -100,7 +100,7 @@ private initializeChart():void {
       }
     },
     series: [{
-      name: 'INCOME',
+      name: 'Revenue',
       data: this.incomeData,
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
