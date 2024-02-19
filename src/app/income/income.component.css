@@ -1,0 +1,22 @@
+mat-select{
+    width: 100%;
+    color: #505f79;
+    font-size: 0rem;
+    background-color: #fff;
+    box-shadow: 0 0 6px #172b4d0a;
+    border-radius: 4px;
+    padding: 6px 0;
+    margin-top: 0;
+    justify-content: space-around;
+    margin-bottom: 13px;
+  }
+  
+  mat-option{
+    background-color: #fff;
+    font-weight: 400;
+    border: none;
+    border-radius: 0;
+    color: #0f172a;
+  }
+  
+  

@@ -104,7 +104,7 @@ private initializeChart() {
         }
       },
       tooltip: {
-        headerFormat: '<span style="font-size: 14px; font-weight: bold;color:#4663ac">{point.key}</span><br/>',
+        headerFormat: '<div style="background-color:red;"><span style="font-size: 14px; font-weight: bold;color:#4663ac;">{point.key}</span></div><br/>',
        pointFormat: '<span style="font-weight: bold">{series.name}:</span> <span style="font-weight: bold;color:red">${point.y}</span><br/>',
       }
     },

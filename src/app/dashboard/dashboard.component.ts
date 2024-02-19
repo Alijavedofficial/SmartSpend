@@ -88,7 +88,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     const options: CountUpOptions = {
-      duration: 1,
+      duration: 2,
     };
     this.counter1 = new CountUp(
       this.counter1Element.nativeElement,

@@ -107,11 +107,11 @@ export class IncomeComponent implements OnInit {
     if (category === 'shopify') {
       return '../../assets/Categories/pngwing.com.png';
     } else if (category === 'salary') {
-      return '../../assets/Categories/dollar-icon-png-3543.png';
+      return '../../assets/Categories/dollar-icon-png-3541.png';
     } else if (category === 'freelance') {
-      return '../../assets/Categories/—Pngtree—vector business man icon_4239598.png';
+      return '../../assets/Categories/laptop-png-6775.png';
     } else if (category === 'business') {
-      return '../../assets/Categories/pngwing.business.png';
+      return '../../assets/Categories/work-icon-4448.png';
     } else if (category == 'socialmedia') {
       return '../../assets/Categories/share-icon-40141.png';
     } else if (category === 'amazon') {
@@ -131,4 +131,10 @@ export class IncomeComponent implements OnInit {
     const day = ('0' + date.getDate()).slice(-2);
     return `${year}-${month}-${day}`;
   }
+  selectedOption: string;
+  options: any[] = [
+    { value: 'option1', viewValue: 'Option 1' },
+    { value: 'option2', viewValue: 'Option 2' },
+    { value: 'option3', viewValue: 'Option 3' }
+  ];
 }
