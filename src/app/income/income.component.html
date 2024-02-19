@@ -8,17 +8,18 @@
     <input type="text" placeholder="Income Title" formControlName="incomeTitle" id="incomeTitle"/>
     <input type="number" placeholder="Income Amount" formControlName="incomeAmount" id="incomeAmount"/>
     <input type="date" placeholder="Enter Date" formControlName="incomeDate" id="incomeDate"/>
-    <select formControlName="incomeCategory" [(ngModel)]="selectedCategory" id="incomeCategory">
-        <option value="" disabled>Select Income Type</option>
-        <option value="freelance">freelance</option>
-        <option value="salary">Salary</option>
-        <option value="shopify">Shopify</option>
-        <option value="business">Business</option>
-        <option value="socialmedia">Social Media</option>
-        <option value="amazon">Amazon</option>
-        <option value="youtube">Youtube Adsense</option>
-        <option value="other">Other</option>
-    </select>
+  
+    <mat-select formControlName="incomeCategory" [(ngModel)]="selectedCategory" id="incomeCategory">
+        <mat-option value="" disabled>Select Income Type</mat-option>
+        <mat-option value="freelance">freelance</mat-option>
+        <mat-option value="salary">Salary</mat-option>
+        <mat-option value="shopify">Shopify</mat-option>
+        <mat-option value="business">Business</mat-option>
+        <mat-option value="socialmedia">Social Media</mat-option>
+        <mat-option value="amazon">Amazon</mat-option>
+        <mat-option value="youtube">Youtube Adsense</mat-option>
+        <mat-option value="other">Other</mat-option>
+    </mat-select>
     <textarea placeholder="Add a Reference" formControlName="incomeDescription" id="incomeDescription"></textarea>
 
     <button class="bg-green-600 my-4" (click)="addIncome()"><i class="fa-solid fa-plus"></i>Add Income</button>

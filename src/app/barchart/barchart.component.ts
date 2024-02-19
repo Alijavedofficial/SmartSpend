@@ -84,7 +84,7 @@ private initializeChart():void {
         },
         tooltip: {
           headerFormat: '<span style="font-size: 14px; color: #4663ac; font-weight: bold;  justify-content: center;">{point.x}</span><br/>',
-          pointFormat: '<span style="font-weight: bold">{series.name}</span>: <span style="font-weight: bold">${point.y}</span><br/>',
+          pointFormat: '<span style="font-weight: bold">{series.name}:</span><span style="font-weight: bold;color:green">${point.y}</span><br/>',
          
         }
        }

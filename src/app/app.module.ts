@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExpensebarchartComponent } from './expensebarchart/expensebarchart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { MatSelectModule } from '@angular/material/select';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -40,9 +42,12 @@ import { LoginComponent } from './login/login.component';
     ChartModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

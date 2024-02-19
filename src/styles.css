@@ -68,9 +68,31 @@ textarea {
     font-weight: 500;
   }
 
-  .dark-mode {
-    background-color: black;
+  mat-select{
+    width: 100%;
+    color: #505f79;
+    font-size: 0rem;
+    background-color: #fff;
+    box-shadow: 0 0 6px #172b4d0a;
+    border-radius: 4px;
+    padding: 6px 0;
+    margin-top: 0;
+    justify-content: space-around;
+    margin-bottom: 13px;
+  }
+  mat-option{
     
+    background-color: #fff;
+    font-weight: 400;
+    border: none;
+    border-radius: 0;
+    color: #0f172a;
+   
+  }
+  mat-option:hover{
+    color: #0f172a;
   }
 
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
