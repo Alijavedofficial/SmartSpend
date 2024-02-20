@@ -32,12 +32,12 @@
     opacity: 0.7;
     transition: opacity 0.3s ease;
     font: bold;
-    padding: 5px;
+    padding-left: 20px;
 }
 
  ul li.active {
     opacity: 1;
-    border-right: 3px solid black;
+    border-right: 3px solid rgb(18, 18, 55);
 }
 
 

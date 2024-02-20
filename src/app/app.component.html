@@ -5,7 +5,7 @@
    <img src=".././assets/logo-no-background.png" />
   </div>
 
-<ul class="p-5 py-8">
+<ul class="py-8">
     <li class="py-2 cursor-pointer font-semibold" [ngClass]="{'active': isRouteActive('/dashboard')}" routerLink="/dashboard"><span class="sidelink"><i class="fa-solid fa-chart-line"></i></span><a >DashBoard</a></li>
     <!--<li class="py-2 cursor-pointer font-semibold" [ngClass]="{'active': isRouteActive('/transactions')}" routerLink="/transactions"><span class="sidelink"><i class="fa-solid fa-wallet"></i></span><a >View Transactions</a></li>-->
     <li class="py-2 cursor-pointer font-semibold" [ngClass]="{'active': isRouteActive('/income')}" routerLink="/income"><span class="sidelink"><i class="fa-solid fa-money-bill-trend-up "></i></span><a >Income</a></li>
@@ -20,7 +20,30 @@
 
 
 <mat-sidenav-content class="content">
-    <button mat-button (click)="toggleSideBar()">toggle</button>
+   
+    <div class="flex justify-between items-center px-5 py-5 pt-1 w-full max-sm:flex-col">
+        <div class="flex gap-3 items-center">
+     <i class="fa-solid fa-circle-arrow-right text-[40px] opacity-55 hover:opacity-100 transition-opacity" (click)="toggleSideBar()"></i>
+        <h1 class="text-[40px] font-bold">{{componentName}}</h1>
+    </div>
+        <div
+          class="bg-white flex gap-4 rounded-s-full rounded-e-full px-2 items-center justify-center shadow-custom"
+        >
+          <div class="group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input placeholder="Search...." type="search" class="input" />
+          </div>
+          <i class="fa-solid fa-bars text-[15px] opacity-55 hover:opacity-100 transition-opacity hidden max-lg:inline-block"></i>
+          <i class="fa-regular fa-bell text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
+          <i class="fa-solid fa-circle-exclamation text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
+          <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
+          <img
+            class="rounded-full w-[40px] object-cover h-4/6"
+            src="https://img.freepik.com/premium-photo/actor-digital-avatar-generative-ai_934475-9309.jpg"
+          />
+        </div>
+      </div>
+      
     
       <router-outlet></router-outlet>
       

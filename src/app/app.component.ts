@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute, NavigationEnd } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -11,8 +11,15 @@ export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
   shouldEnableScrollbar: boolean = true; 
   isExpanded: boolean = true;
+  componentName: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private route: ActivatedRoute) {
+    this.router.events.subscribe(event => {
+      if(event instanceof NavigationEnd) {
+        this.componentName = this.route.snapshot.firstChild?.data['title'];
+      }
+    })
+  }
   
  toggleSideBar(): void {
   this.isExpanded = !this.isExpanded;

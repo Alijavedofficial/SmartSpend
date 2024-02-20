@@ -8,11 +8,11 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'transactions', component: TransactionsComponent},
-  {path: 'income', component: IncomeComponent},
-  {path: 'expense', component:ExpenseComponent},
-  {path: 'signin', component:LoginComponent}
+  {path:'dashboard', component: DashboardComponent , data: {title: 'Dashboard'}},
+  {path:'transactions', component: TransactionsComponent, data: {title: 'Transactions'}},
+  {path: 'income', component: IncomeComponent, data: {title: 'Income'}},
+  {path: 'expense', component:ExpenseComponent, data: {title: 'Expense'}},
+  {path: 'signin', component:LoginComponent, data: {title: 'Sign In'}},
 ];
 
 @NgModule({
