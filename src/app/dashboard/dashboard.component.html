@@ -1,27 +1,30 @@
-
+                               <!--Top Bar that contains a heading(Dashboard) and a menu field-->
 <div class="flex justify-between items-center p-6 w-full">
   <h1 class="text-[40px] font-bold pb-3">Dashboard</h1>
   <div
-    class="bg-white flex gap-6 rounded-s-full rounded-e-full px-4 items-center justify-center"
+    class="bg-white flex gap-4 rounded-s-full rounded-e-full px-2 items-center justify-center shadow-custom"
   >
-    <div class="group mt-4">
+    <div class="group">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input placeholder="Search" type="search" class="input" />
+      <input placeholder="Search...." type="search" class="input" />
     </div>
-    <i class="fa-regular fa-bell text-[20px] opacity-75" ></i>
-    <i class="fa-solid fa-moon text-[20px] opacity-75"></i>
+    <i class="fa-solid fa-bars text-[15px] opacity-55 hover:opacity-100 transition-opacity hidden max-lg:inline-block"></i>
+    <i class="fa-regular fa-bell text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
+    <i class="fa-solid fa-circle-exclamation text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
+    <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity"></i>
     <img
-      class="rounded-full w-[36px] object-cover h-3/6"
-      src="https://framerusercontent.com/images/gMHfU4xaMiq7jHpCpTNtqnK6ulQ.jpg"
+      class="rounded-full w-[40px] object-cover h-4/6"
+      src="https://img.freepik.com/premium-photo/actor-digital-avatar-generative-ai_934475-9309.jpg"
     />
   </div>
 </div>
 
-<div class="px-4">
-  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 2xl:grid-cols-3 3xl:grid-cols-6">
-    <div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+                                 <!--Total and highest amounts displaying containers-->
+<div class="px-6">
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6">
+    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
         <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-            <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
+            <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
                 <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
                   <i class="fa-solid fa-wallet"></i>
                 </span>
@@ -29,13 +32,13 @@
         </div>
         <div class="h-50 ml-4 flex w-auto flex-col justify-center">
             <p class="font-dm text-sm font-medium text-gray-500">Total Savings</p>
-            <h4 #counter1 class="text-2xl font-bold text-navy-700 text-[#0f172a]">{{ totalBalance | number }}</h4>
+            <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter1>{{ totalBalance | number }}</span></h4>
         </div>
     </div>
    
-    <div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
       <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-          <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
+          <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
               <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
                 <i class="fa-solid fa-chart-simple"></i
                   >
@@ -44,13 +47,13 @@
       </div>
       <div class="h-50 ml-4 flex w-auto flex-col justify-center">
           <p class="font-dm text-sm font-medium text-gray-500">Total Earnings</p>
-          <h4 #counter2 class="text-2xl font-bold text-navy-700 text-[#0f172a]">{{totalIncome | number}}</h4>
+          <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter2>{{totalIncome | number}}</span></h4>
       </div>
   </div>
 
-  <div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+  <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
     <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-        <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
+        <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
             <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
               <i class="fa-solid fa-chart-simple"></i
                 >
@@ -59,13 +62,13 @@
     </div>
     <div class="h-50 ml-4 flex w-auto flex-col justify-center">
         <p class="font-dm text-sm font-medium text-gray-500">Total Outlay</p>
-        <h4 #counter3 class="text-2xl font-bold text-navy-700 text-[#0f172a]">{{totalExpense | number}}</h4>
+        <h4 class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span  #counter3>{{totalExpense | number}}</span></h4>
     </div>
 </div>
 
-<div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+<div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
   <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
+      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
           <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
             <i class="fa-solid fa-dollar-sign"></i>
           </span>
@@ -73,13 +76,13 @@
   </div>
   <div class="h-50 ml-4 flex w-auto flex-col justify-center">
       <p class="font-dm text-sm font-medium text-gray-500">Highest Earning</p>
-     <h4 #counter4 class="text-2xl font-bold text-navy-700 text-[#0f172a]">${{highestIncome | number}}</h4>
+     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter4>${{highestIncome | number}}</span></h4>
   </div>
 </div>
 
-<div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+<div class="shadow-custom gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
   <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
+      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
           <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
             <i class="fa-solid fa-dollar-sign"></i>
           </span>
@@ -87,95 +90,15 @@
   </div>
   <div class="h-50 ml-4 flex w-auto flex-col justify-center">
       <p class="font-dm text-sm font-medium text-gray-500">Highest Outlay</p>
-      <h4 #counter5 class="text-2xl font-bold text-navy-700 text-[#0f172a]">{{highestExpense | number}}</h4>
+     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter5>{{highestExpense | number}}</span></h4>
   </div>
   </div>  
-
-  <div class="!z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
-    <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-        <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-gray-100">
-            <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
-              <i class="fa-solid fa-dollar-sign"></i>
-            </span>
-        </div>
-    </div>
-    <div class="h-50 ml-4 flex w-auto flex-col justify-center">
-        <p class="font-dm text-sm font-medium text-gray-500">Earnings This Month</p>
-        <h4 #counter5 class="text-2xl font-bold text-navy-700 text-[#0f172a]">{{highestExpense | number}}</h4>
-    </div>
-    </div>  
-  
-
-
-
 </div>
-<!--
-  <div class="flex gap-3 w-full items-center px-0 justify-start flex-row">
-    <div
-      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full" 
-    >
-      <span
-        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
-        ><i class="fa-solid fa-wallet"></i></span>
-      <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Savings</p>
-    <span class="font-bold">$</span><span #counter1 class="font-bold">{{ totalBalance | number }}</span>
-      </h1>
-    </div>
 
-    <div
-      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
-    >
-      <span
-        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
-        ><i class="fa-solid fa-sack-dollar"></i
-      ></span>
-      <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Earnings</p>
-        <span class="font-bold">$</span><span #counter2 class="font-bold">{{totalIncome | number}}</span>
-      </h1>
-    </div>
-    <div
-      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
-    >
-      <span
-        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
-        ><i class="fa-solid fa-sack-dollar"></i
-      ></span>
-      <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Total Outlay</p>
-        <span class="font-bold">$</span><span #counter3 class="font-bold">{{totalExpense | number}}</span>
-      </h1>
-    </div>
-    <div
-      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
-    >
-      <span
-        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
-        ><i class="fa-solid fa-dollar-sign"></i
-      ></span>
-      <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Highest Earning</p>
-        <span class="font-bold">$</span><span #counter4 class="font-bold">{{highestIncome | number}}</span>
-      </h1>
-    </div>
-    <div
-      class="py-3 px-5 items-center justify-center text-center bg-white rounded-3xl flex gap-5 w-full"
-    >
-      <span
-        class="text-[#009bd6] bg-slate-100 px-4 py-2 rounded-full font-light text-[22px]"
-        ><i class="fa-solid fa-dollar-sign"></i
-      ></span>
-      <h1 class="text-[25px] font-semibold">
-        <p class="opacity-75 text-[17px] font-normal">Highest Outlay</p>
-        <span class="font-bold">$</span><span #counter5 class="font-bold">{{highestExpense | number}}</span>
-      </h1>
-    </div>
-  </div>-->
-
+                                 <!--Line chart and bar chart displaying container-->
   <div class="flex gap-5" >
-
-    <div class="bg-white p-1 rounded-xl mt-6 w-5/6" >
+    <!--Line Chart-->
+    <div class="bg-white p-1 rounded-xl mt-5 w-5/6 shadow-custom" >
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Gainings VS Spendings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
@@ -183,8 +106,8 @@
       </div>
       <app-linechart></app-linechart>
     </div>
-
-    <div class="bg-white rounded-xl mt-6 w-3/6">
+    <!--Bar Chart-->
+    <div class="bg-white rounded-xl mt-6 w-3/6 shadow-custom">
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Monthly Revenue</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
@@ -195,8 +118,9 @@
     </div>
   </div>
 
+
   <div class="mt-2 flex gap-5 w-full">
-    <div class="bg-white rounded-xl mt-3 w-[50%] p-4">
+    <div class="bg-white rounded-xl mt-3 w-[50%] p-4 shadow-custom">
     
       <div class="flex  justify-between">
         <h1 class="text-[18px] font-bold pb-3">Recent History</h1>
@@ -224,8 +148,8 @@
       </div>
     </div>
 
-    <div class="w-[50%] flex gap-5">
-      <div class="bg-white rounded-xl mt-3 w-[50%]">
+    <div class="w-[50%] flex gap-5 ">
+      <div class="bg-white rounded-xl mt-3 w-[50%] shadow-custom">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Monthly Spendings</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
@@ -234,7 +158,7 @@
         </div>
         <app-expensebarchart></app-expensebarchart>
       </div>
-      <div class="bg-white rounded-xl mt-3 w-[50%]">
+      <div class="bg-white rounded-xl mt-3 w-[50%] shadow-custom">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Outlay This Month</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2"
