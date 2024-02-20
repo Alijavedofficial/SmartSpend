@@ -24,6 +24,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
   recentIncomes: any[] = [];
   recentExpenses: any[] = [];
   recentTransactions: any[] = [];
+  
 
   constructor(
     private incomedataservice: IncomedataService,

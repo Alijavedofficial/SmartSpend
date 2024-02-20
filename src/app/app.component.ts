@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,17 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  @ViewChild('sidenav') sidenav: MatSidenav;
   shouldEnableScrollbar: boolean = true; 
+  isExpanded: boolean = true;
 
   constructor(private router: Router) {}
   
+ toggleSideBar(): void {
+  this.isExpanded = !this.isExpanded;
+  this.sidenav.toggle()
+ }
+
   enableScrollbar() {
     this.shouldEnableScrollbar = true;
   }

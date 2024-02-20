@@ -1,5 +1,5 @@
                                <!--Top Bar that contains a heading(Dashboard) and a menu field-->
-<div class="flex justify-between items-center p-6 w-full">
+<div class="flex justify-between items-center p-6 w-full max-sm:flex-col">
   <h1 class="text-[40px] font-bold pb-3">Dashboard</h1>
   <div
     class="bg-white flex gap-4 rounded-s-full rounded-e-full px-2 items-center justify-center shadow-custom"
@@ -20,7 +20,7 @@
 </div>
 
                                  <!--Total and highest amounts displaying containers-->
-<div class="px-6">
+<div class="px-6 max-sm:px-1">
   <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6">
     <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
         <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
@@ -96,9 +96,9 @@
 </div>
 
                                  <!--Line chart and bar chart displaying container-->
-  <div class="flex gap-5" >
+  <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 3xl:grid-cols-2 gap-5 mt-5" >
     <!--Line Chart-->
-    <div class="bg-white p-1 rounded-xl mt-5 w-5/6 shadow-custom" >
+    <div class="bg-white p-1 rounded-xl shadow-custom" >
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3">Gainings VS Spendings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
@@ -107,9 +107,9 @@
       <app-linechart></app-linechart>
     </div>
     <!--Bar Chart-->
-    <div class="bg-white rounded-xl mt-6 w-3/6 shadow-custom">
+    <div class="bg-white rounded-xl shadow-custom">
       <div class="flex p-4 justify-between">
-        <h1 class="text-[18px] font-bold pb-3">Monthly Revenue</h1>
+        <h1 class="text-[18px] font-bold pb-3">Monthly Earnings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
           ><i class="fa-solid fa-chart-simple"></i
         ></span>

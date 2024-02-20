@@ -20,7 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatSidenavContainer,MatSidenav,MatSidenavContent,MatSidenavModule } from '@angular/material/sidenav';
 
 
 
@@ -48,6 +48,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSidenavModule,
+    MatSidenav,
+    MatSidenavContent,
+    MatSidenavContainer
   ],
   providers: [
     provideAnimationsAsync()
