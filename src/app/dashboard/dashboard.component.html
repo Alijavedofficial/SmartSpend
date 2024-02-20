@@ -100,8 +100,8 @@
   </div>
 
 
-  <div class="mt-2 flex gap-5 w-full">
-    <div class="bg-white rounded-xl mt-3 w-[50%] p-4 shadow-custom">
+  <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 3xl:grid-cols-2 gap-5 mt-5">
+    <div class="bg-white rounded-xl p-4 shadow-custom">
     
       <div class="flex  justify-between">
         <h1 class="text-[18px] font-bold pb-3">Recent History</h1>
@@ -129,8 +129,9 @@
       </div>
     </div>
 
-    <div class="w-[50%] flex gap-5 ">
-      <div class="bg-white rounded-xl mt-3 w-[50%] shadow-custom">
+
+    <div class='grid grid-cols-2 gap-5'>
+      <div class="bg-white rounded-xl shadow-custom">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Monthly Spendings</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
@@ -139,7 +140,7 @@
         </div>
         <app-expensebarchart></app-expensebarchart>
       </div>
-      <div class="bg-white rounded-xl mt-3 w-[50%] shadow-custom">
+      <div class="bg-white rounded-xl shadow-custom">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3">Outlay This Month</h1>
           <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2"
