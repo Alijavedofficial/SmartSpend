@@ -1,5 +1,5 @@
-<div class="px-8">
-    <h1 class="text-[33px] font-bold pb-3">Expenses</h1>
+<div class="px-8 py-4">
+    
 <div class="p-4 items-center justify-center text-center bg-white rounded-3xl" style="border: 1px solid rgb(203, 203, 203);">
     <h1 class="text-[30px] font-semibold">Total Expense: <span  class="text-[#d14040] font-bold">{{totalExpense | currency}}</span></h1>
 </div>
@@ -22,7 +22,7 @@
     </select>
     <textarea placeholder="Add a Reference" formControlName="expenseDescription"></textarea>
 
-    <button (click)="addExpense()" class="bg-[#d14040] my-4"><i class="fa-solid fa-plus" ></i>Add Expense</button>
+    <button (click)="addExpense()" class="bg-[#d14040] my-4"><img src="../../assets/icons8-add-24.png" class="w-[22px] mr-1" />Add Expense</button>
 </form>
 
 <div class="flex flex-col w-2/3 pt-3">
@@ -40,7 +40,7 @@
         </div>
         </div>
         <div class="right-16 absolute mt-2">
-            <span class="rounded-full bg-[#FF0000] text-[22px] px-2.5 py-2.5 flex justify-end items-center cursor-pointer" (click)="confirmDelete(expense, i)"><i class="fa-solid fa-trash text-[#fff]"></i></span>
+            <span class="rounded-full bg-[#f0f8ff] text-[22px] px-2.5 py-2.5 flex justify-end items-center cursor-pointer" (click)="confirmDelete(expense, i)"><img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png?uid=R120008979&ga=GA1.1.161877072.1706307699&" class="w-[25px]" /></span>
           </div>
     </div>
    

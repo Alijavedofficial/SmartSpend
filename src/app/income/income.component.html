@@ -1,5 +1,5 @@
-<div class="px-8">
-    <h1 class="text-[33px] font-bold pb-3">Incomes</h1>
+<div class="px-8 py-4">
+   
 <div class="p-4 items-center justify-center text-center bg-white rounded-3xl" style="border: 1px solid rgb(203, 203, 203);">
     <h1 class="text-[30px] font-semibold">Total Income: <span  class="text-[#36802d] font-bold">{{ totalIncome | currency }}</span></h1>
 </div>
@@ -21,7 +21,7 @@
     </select>
     <textarea placeholder="Add a Reference" formControlName="incomeDescription" id="incomeDescription"></textarea>
 
-    <button class="bg-green-600 my-4" (click)="addIncome()"><i class="fa-solid fa-plus"></i>Add Income</button>
+    <button class="bg-green-600 my-4" (click)="addIncome()"><img src="../../assets/icons8-add-24.png" class="w-[22px] mr-1" />Add Income</button>
 </form>
 <div class="flex flex-col w-2/3 pt-3">
     <div class="flex flex-col" *ngFor="let income of recentIncomes; let i = index">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="right-16 absolute">
-          <span class="rounded-full bg-[#f0f8ff] text-[26px] px-4 py-4 flex justify-end items-center cursor-pointer" (click)="confirmDelete(income, i)"><i class="fa-solid fa-trash text-[#FF0000]"></i></span>
+          <span class="rounded-full bg-[#f0f8ff] text-[26px] px-3 py-3 flex justify-end items-center cursor-pointer" (click)="confirmDelete(income, i)"><img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png?uid=R120008979&ga=GA1.1.161877072.1706307699&" class="w-[25px]" /></span>
         </div>
       </div>
      

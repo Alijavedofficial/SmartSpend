@@ -105,21 +105,21 @@ export class IncomeComponent implements OnInit {
 
   getCategoryImage(category: string): string | undefined {
     if (category === 'shopify') {
-      return '../../assets/Categories/pngwing.com.png';
+      return '../../assets/Income/shopify_6424098.png';
     } else if (category === 'salary') {
-      return '../../assets/Categories/dollar-icon-png-3541.png';
+      return '../../assets/Income/dollar_3225621.png';
     } else if (category === 'freelance') {
-      return '../../assets/Categories/laptop-png-6775.png';
+      return '../../assets/Income/computer_2004580.png';
     } else if (category === 'business') {
-      return '../../assets/Categories/work-icon-4448.png';
+      return '../../assets/Income/negotiation_1356001.png';
     } else if (category == 'socialmedia') {
-      return '../../assets/Categories/share-icon-40141.png';
+      return '../../assets/Income/social-media_3893024.png';
     } else if (category === 'amazon') {
       return '../../assets/Categories/amazon-icon-41517.png';
     } else if (category === 'other') {
-      return '../../assets/Categories/pngwing.com (1).png';
+      return '../../assets/Income/salary_1589110.png';
     } else if (category === 'youtube') {
-      return '../../assets/Categories/youtube-logo-png-3563.png';
+      return '../../assets/Income/youtube_1077046.png';
     } else {
       return undefined;
     }

@@ -1,9 +1,10 @@
 .container {
-    width: 100%;
+    max-width: 100%;
   }
   .content {
    width: auto;
    padding: 20px;
+   background-color: rgb(244 247 254);
   }
   
   .side{
@@ -16,6 +17,7 @@
   left: 0;
   overflow-y:auto;
   position: fixed;
+  border: none;
   }
 
   .sidelink{

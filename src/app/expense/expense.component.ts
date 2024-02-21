@@ -111,34 +111,34 @@ formatDate(date: Date): string {
 
 getCategoryImage(category:string): string | undefined {
   if(category === 'grocery') {
-    return '../../assets/Categories/cart.png';
+    return '../../assets/Income/grocery_1261052.png';
   }
   else if(category === 'shopping') {
-    return '../../assets/Categories/shopping.png';
+    return '../../assets/Income/shopping-cart_3737372.png';
   }
   else if(category === 'rent') {
-    return '../../assets/Categories/pngwing.com (1).png';
+    return '../../assets/Income/dollar_3225621.png';
   }
   else if(category === 'bills') {
-    return '../../assets/Categories/pngwing.com (1).png';
+    return '../../assets/Income/wallet_584067.png';
   }
   else if(category === 'installment') {
     return '../../assets/Categories/pngwing.com (1).png';
   }
   else if(category === 'health') {
-    return '../../assets/Categories/health.png';
+    return '../../assets/Income/heartbeat_898655.png';
   }
   else if(category === 'education') {
-    return '../../assets/Categories/education.png';
+    return '../../assets/Income/mortarboard_114806.png';
   }
   else if(category === 'investment') {
-    return '../../assets/Categories/dollar-icon-png-3543.png';
+    return '../../assets/Income/wallet_584067.png';
   }
   else if(category === 'personal') {
-    return '../../assets/Categories/personal.png';
+    return '../../assets/Income/hair-gel_2752616.png';
   }
   else if(category === 'other') {
-    return '../../assets/Categories/pngwing.com (1).png';
+    return '../../assets/Income/salary_1589110.png';
   }
   else {
     return undefined;
