@@ -1,4 +1,27 @@
-
+table tr th {
+    text-align: center;
+    padding: 12px;
+    color: rgb(128, 138, 147);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+  }
+  table tr td {
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+  }
+ table{
+  padding: 5px;
+ }
+ 
    
    
    

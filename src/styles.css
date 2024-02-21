@@ -98,28 +98,15 @@ textarea {
     cursor: pointer;
    }
    
-   
-   table tr th {
-      text-align: center;
-      padding: 14px;
-      color: rgb(128, 138, 147);
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 12px;
-      justify-content: start;
-      align-items: center;
-      text-align: start;
-    }
-    table tr td {
-      padding: 14px;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 500;
-      justify-content: start;
-      align-items: center;
-      text-align: start;
-    }
+   .dark .button {
+    background-color: black;
+    color: white;
+  }
   
+  .dark .button:hover {
+    background-color: gray;
+  }
+   
     .shadow-custom {
       box-shadow: 14px 17px 40px 4px rgba(112, 144, 176, .08);
     }

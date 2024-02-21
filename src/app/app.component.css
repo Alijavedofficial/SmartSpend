@@ -4,12 +4,10 @@
   .content {
    width: auto;
    padding: 20px;
-   background-color: rgb(244 247 254);
   }
   
   .side{
     width: 220px;
-    background-color: #fff;
     padding-top: 5px;
     padding-bottom: 5px;
     top: 0;

@@ -1,5 +1,5 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav class="side" mode="side" #sidenav [opened]="isExpanded">
+    <mat-sidenav class="side bg-white text-[#172b4d] dark:bg-[#111C44] dark:text-[#fff]" mode="side" #sidenav [opened]="isExpanded">
 
   <div class="flex px-5 py-8 gap-4 items-center border-b border-gray-300">
    <img src=".././assets/logo-no-background.png" />
@@ -21,7 +21,7 @@
 </mat-sidenav>
 
 
-<mat-sidenav-content class="content w-full h-full">
+<mat-sidenav-content class="content w-full h-full bg-[#F4F7FE] dark:bg-[#202845]">
    
     <div class="flex justify-between items-center px-5 py-5 pt-1 w-full max-sm:flex-col">
      <div>
@@ -47,9 +47,12 @@
           <i class="fa-solid fa-bars text-[15px] opacity-55 hover:opacity-100 transition-opacity hidden max-lg:inline-block text-[#172b4d]"></i>
           <i class="fa-regular fa-bell text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]"></i>
           <i class="fa-solid fa-circle-exclamation text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]"></i>
-          <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]"></i>
+          <span (click)="darkMode.set(!darkMode())" class="mb-0.5">
+          <i class="fa-solid fa-sun text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]" *ngIf="darkMode()"></i>
+          <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]" *ngIf="!darkMode()"></i>
+        </span>
           <img
-            class="rounded-full w-[40px] object-cover h-4/6"
+            class="rounded-full w-[40px] object-cover h-4/6 cursor-pointer"
             src="https://img.freepik.com/premium-photo/actor-digital-avatar-generative-ai_934475-9309.jpg"
           />
         </div>

@@ -17,7 +17,7 @@
         </div>
     </div>
    
-    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
       <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
               <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
@@ -110,19 +110,19 @@
       </div>
 
       <div>
-        <table class>
-          <tr class="border-b border-gray-300" class="grid grid-cols-4 gap-4">
+        <table class="grid grid-rows-1">
+          <tr class="grid grid-cols-4 gap-4 border-b border-gray-300">
             <th>Name</th>
             <th>Status</th>
-            <th>Amount</th>
-            <th>Date</th>
+           <th>Date</th>
+           <th>Amount</th>
           </tr>
           <tbody *ngIf="recentTransactions.length > 0">
             <tr *ngFor="let transaction of recentTransactions" class="grid grid-cols-4 gap-4">
               <td>{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
               <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
-              <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
               <td>{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
+                <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
             </tr>
           </tbody>
           
