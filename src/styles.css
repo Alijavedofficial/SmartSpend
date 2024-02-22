@@ -6,7 +6,7 @@
 
 body{
    background-color: rgb(244 247 254);
-    color: #172b4d;
+   
 }
 *{
   padding: 0;
@@ -112,4 +112,4 @@ textarea {
     }
     
 html, body { height: 100%; }
-body { margin: 0;color:#172b4d;background-color: rgb(244 247 254); }
+body { margin: 0;background-color: rgb(244 247 254); }

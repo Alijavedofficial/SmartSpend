@@ -77,6 +77,7 @@ export class LinechartComponent implements OnInit {
     this.lineChart = Highcharts.chart('container', {
       chart: {
         type: 'line',
+        backgroundColor: 'rgba(0, 0, 0, 0)',
       },
       title: {
         text: '',

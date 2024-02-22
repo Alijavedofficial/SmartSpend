@@ -1,26 +1,25 @@
-                              
-
+                  
                                  <!--Total and highest amounts displaying containers-->
 <div class="px-6 max-sm:px-1">
   <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 3xl:grid-cols-6">
-    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500  dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] dark:bg-[#111C44]">
         <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-            <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
-                <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
+            <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE] dark:bg-[#0B1437]">
+                <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px] dark:text-white">
                   <i class="fa-solid fa-wallet"></i>
                 </span>
             </div>
         </div>
         <div class="h-50 ml-4 flex w-auto flex-col justify-center">
             <p class="font-dm text-sm font-medium text-[#A3AED0]">Savings</p>
-            <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter1>{{ totalBalance | number }}</span></h4>
+            <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a] dark:text-white"><span>$</span><span #counter1>{{ totalBalance | number }}</span></h4>
         </div>
     </div>
    
-    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+    <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500  dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] dark:bg-[#111C44]">
       <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-          <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
-              <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
+          <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE] dark:bg-[#0B1437]">
+              <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px] dark:text-white">
                 <i class="fa-solid fa-chart-simple"></i
                   >
               </span>
@@ -28,14 +27,14 @@
       </div>
       <div class="h-50 ml-4 flex w-auto flex-col justify-center">
           <p class="font-dm text-sm font-medium text-[#A3AED0]">Earnings</p>
-          <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter2>{{totalIncome | number}}</span></h4>
+          <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a] dark:text-white"><span>$</span><span #counter2>{{totalIncome | number}}</span></h4>
       </div>
   </div>
 
-  <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+  <div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500  dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] dark:bg-[#111C44]">
     <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-        <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
-            <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
+        <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE] dark:bg-[#0B1437]">
+            <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px] dark:text-white">
               <i class="fa-solid fa-chart-simple"></i
                 >
             </span>
@@ -43,35 +42,35 @@
     </div>
     <div class="h-50 ml-4 flex w-auto flex-col justify-center">
         <p class="font-dm text-sm font-medium text-[#A3AED0]">Outlay</p>
-        <h4 class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span  #counter3>{{totalExpense | number}}</span></h4>
+        <h4 class="text-[22px] font-bold text-navy-700 text-[#0f172a] dark:text-white"><span>$</span><span  #counter3>{{totalExpense | number}}</span></h4>
     </div>
 </div>
 
-<div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+<div class="shadow-custom !z-5 gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500  dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] dark:bg-[#111C44]">
   <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
-          <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
+      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE] dark:bg-[#0B1437]">
+          <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px] dark:text-white">
             <i class="fa-solid fa-dollar-sign"></i>
           </span>
       </div>
   </div>
   <div class="h-50 ml-4 flex w-auto flex-col justify-center">
       <p class="font-dm text-sm font-medium text-[#A3AED0]">Highest Earning</p>
-     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter4>${{highestIncome | number}}</span></h4>
+     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a] dark:text-white"><span>$</span><span #counter4>${{highestIncome | number}}</span></h4>
   </div>
 </div>
 
-<div class="shadow-custom gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+<div class="shadow-custom gap-2 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500  dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] dark:bg-[#111C44]">
   <div class="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE]">
-          <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px]">
+      <div class="rounded-full bg-lightPrimary p-3 dark:bg-navy-700 bg-[#F4F7FE] dark:bg-[#0B1437]">
+          <span class="flex items-center text-brand-500  text-[#009bd6] text-[22px] dark:text-white">
             <i class="fa-solid fa-dollar-sign"></i>
           </span>
       </div>
   </div>
   <div class="h-50 ml-4 flex w-auto flex-col justify-center">
       <p class="font-dm text-sm font-medium text-[#A3AED0]">Highest Outlay</p>
-     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a]"><span>$</span><span #counter5>{{highestExpense | number}}</span></h4>
+     <h4  class="text-[22px] font-bold text-navy-700 text-[#0f172a] dark:text-white"><span>$</span><span #counter5>{{highestExpense | number}}</span></h4>
   </div>
   </div>  
 </div>
@@ -79,19 +78,19 @@
                                  <!--Line chart and bar chart displaying container-->
   <div class="grid grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-5 2xl:grid-cols-5 3xl:grid-cols-5 gap-5 mt-5" >
     <!--Line Chart-->
-    <div class="bg-white p-1 rounded-xl shadow-custom col-span-3" >
+    <div class="bg-white p-1 rounded-xl shadow-custom col-span-3 dark:bg-[#111C44]" >
       <div class="flex p-4 justify-between">
-        <h1 class="text-[18px] font-bold pb-3">Gainings VS Spendings</h1>
-        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
+        <h1 class="text-[18px] font-bold pb-3 dark:text-white">Gainings VS Spendings</h1>
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5 dark:bg-[#0B1437] dark:text-white"
           ><i class="fa-solid fa-chart-line"></i></span>
       </div>
       <app-linechart></app-linechart>
     </div>
     <!--Bar Chart-->
-    <div class="bg-white rounded-xl shadow-custom col-span-2">
+    <div class="bg-white rounded-xl shadow-custom col-span-2 dark:bg-[#111C44]">
       <div class="flex p-4 justify-between">
-        <h1 class="text-[18px] font-bold pb-3">Monthly Earnings</h1>
-        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
+        <h1 class="text-[18px] font-bold pb-3 dark:text-white">Monthly Earnings</h1>
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5 dark:bg-[#0B1437] dark:text-white"
           ><i class="fa-solid fa-chart-simple"></i
         ></span>
       </div>
@@ -101,11 +100,11 @@
 
 
   <div class="grid grid-cols-10 max-sm:grid-cols-1 md:grid-cols-10 lg:grid-cols-10 2xl:grid-cols-10 3xl:grid-cols-10 gap-5 mt-5">
-    <div class="bg-white rounded-xl p-4 shadow-custom col-span-5">
+    <div class="bg-white rounded-xl p-4 shadow-custom col-span-5 dark:bg-[#111C44]">
     
       <div class="flex  justify-between">
-        <h1 class="text-[18px] font-bold pb-3">Recent History</h1>
-        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1.5 px-2.5"
+        <h1 class="text-[18px] font-bold pb-3 dark:text-white">Recent History</h1>
+        <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1.5 px-2.5 dark:bg-[#0B1437] dark:text-white"
           > <i class="fa-solid fa-clock-rotate-left"></i></span>
       </div>
 
@@ -119,9 +118,9 @@
           </tr>
           <tbody *ngIf="recentTransactions.length > 0">
             <tr *ngFor="let transaction of recentTransactions" class="grid grid-cols-4 gap-4">
-              <td>{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
+              <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
               <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
-              <td>{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
+              <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
                 <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
             </tr>
           </tbody>
@@ -132,34 +131,35 @@
 
 
     <div class='grid grid-cols-2 gap-5 col-span-5'>
-      <div class="bg-white rounded-xl shadow-custom">
+      <div class="bg-white rounded-xl shadow-custom dark:bg-[#111C44]">
         <div class="flex p-4 justify-between">
-          <h1 class="text-[18px] font-bold pb-3">Monthly Spendings</h1>
-          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5"
+          <h1 class="text-[18px] font-bold pb-3 dark:text-white">Monthly Spendings</h1>
+          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5 dark:bg-[#0B1437] dark:text-white"
             ><i class="fa-solid fa-chart-simple"></i
           ></span>
         </div>
         <app-expensebarchart></app-expensebarchart>
       </div>
-      <div class="bg-white rounded-xl shadow-custom">
+      <div class="bg-white rounded-xl shadow-custom dark:bg-[#111C44]">
         <div class="flex p-4 justify-between">
-          <h1 class="text-[18px] font-bold pb-3">Outlay This Month</h1>
-          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2"
+          <h1 class="text-[18px] font-bold pb-3 dark:text-white">Outlay This Month</h1>
+          <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2 dark:bg-[#0B1437] dark:text-white"
             ><i class="fa-solid fa-chart-pie"></i>
           </span>
         </div>
         <app-donutchart></app-donutchart>
         <div class="flex py-2 justify-evenly">
           <div class="flex flex-col">
-            <span class="text-[#818589]">Shopping</span>
-            <span class="text-center font-bold text-[18px]">43%</span>
+            <span class="text-[#818589] dark:text-white">Shopping</span>
+            <span class="text-center font-bold text-[18px] dark:text-white">43%</span>
           </div>
           <div class="flex flex-col">
-            <span class="text-[#818589]">Grocery</span>
-            <span class="text-center font-bold text-[18px]">38%</span>
+            <span class="text-[#818589] dark:text-white">Grocery</span>
+            <span class="text-center font-bold text-[18px] dark:text-white">38%</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 </div>

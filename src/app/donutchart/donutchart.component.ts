@@ -82,7 +82,7 @@ private initializeChart() {
   chart: {
     type: 'pie',
     plotShadow: false,
-    
+    backgroundColor: 'rgba(0, 0, 0, 0)',
   },
   credits: {
     enabled: false,

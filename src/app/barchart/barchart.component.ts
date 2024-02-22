@@ -53,6 +53,7 @@ private initializeChart():void {
   this.barChart = Highcharts.chart('barcontainer', {
     chart: {
       type: 'column',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
     },
     title: {
       text: '',

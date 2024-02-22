@@ -1,14 +1,14 @@
-<div class="px-8 py-4">
+<div class="px-8 py-4 h-[85vh]">
    
-<div class="p-4 items-center justify-center text-center bg-white rounded-3xl" style="border: 1px solid rgb(203, 203, 203);">
+<div class="p-4 items-center justify-center text-center bg-white rounded-3xl dark:bg-[#111C44]" style="border: 1px solid rgb(203, 203, 203);">
     <h1 class="text-[30px] font-semibold">Total Income: <span  class="text-[#36802d] font-bold">{{ totalIncome | currency }}</span></h1>
 </div>
 <div class="flex gap-10">
 <form class="flex flex-col w-1/3 pt-3" [formGroup]="incomeForm">
-    <input type="text" placeholder="Income Title" formControlName="incomeTitle" id="incomeTitle"/>
-    <input type="number" placeholder="Income Amount" formControlName="incomeAmount" id="incomeAmount"/>
-    <input type="date" placeholder="Enter Date" formControlName="incomeDate" id="incomeDate"/>
-    <select formControlName="incomeCategory" [(ngModel)]="selectedCategory" id="incomeCategory">
+    <input type="text" placeholder="Income Title" formControlName="incomeTitle" id="incomeTitle" class="dark:bg-[#111C44] dark:border-none"/>
+    <input type="number" placeholder="Income Amount" formControlName="incomeAmount" id="incomeAmount" class="dark:bg-[#111C44] dark:border-none"/>
+    <input type="date" placeholder="Enter Date" formControlName="incomeDate" id="incomeDate" class="dark:bg-[#111C44] dark:border-none"/>
+    <select formControlName="incomeCategory" [(ngModel)]="selectedCategory" id="incomeCategory" class="dark:bg-[#111C44] dark:border-none">
         <option value="" disabled>Select Income Type</option>
         <option value="freelance" selected>freelance</option>
         <option value="salary">Salary</option>
@@ -19,14 +19,14 @@
         <option value="youtube">Youtube Adsense</option>
         <option value="other">Other</option>
     </select>
-    <textarea placeholder="Add a Reference" formControlName="incomeDescription" id="incomeDescription"></textarea>
+    <textarea placeholder="Add a Reference" formControlName="incomeDescription" id="incomeDescription" class="dark:bg-[#111C44] dark:border-none"></textarea>
 
     <button class="bg-green-600 my-4" (click)="addIncome()"><img src="../../assets/icons8-add-24.png" class="w-[22px] mr-1" />Add Income</button>
 </form>
 <div class="flex flex-col w-2/3 pt-3">
     <div class="flex flex-col" *ngFor="let income of recentIncomes; let i = index">
-      <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4">
-        <span class="rounded-full bg-[#f0f8ff] px-2 py-2 items-center">
+      <div class="p-4 bg-white mb-2 rounded-3xl flex gap-4 dark:bg-[#111C44]">
+        <span class="rounded-full bg-[#f0f8ff] px-2 py-2 items-center dark:bg-[#111C44]">
           <img [src]="getCategoryImage(income.incomeCategory)" alt="Income Icon" class="w-[40px] h-auto object-cover" />
         </span>
       
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="right-16 absolute">
-          <span class="rounded-full bg-[#f0f8ff] text-[26px] px-3 py-3 flex justify-end items-center cursor-pointer" (click)="confirmDelete(income, i)"><img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png?uid=R120008979&ga=GA1.1.161877072.1706307699&" class="w-[25px]" /></span>
+          <span class="rounded-full bg-[#f0f8ff] text-[26px] px-3 py-3 flex justify-end items-center cursor-pointer dark:bg-[#0B1437]" (click)="confirmDelete(income, i)"><img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png?uid=R120008979&ga=GA1.1.161877072.1706307699&" class="w-[25px]" /></span>
         </div>
       </div>
      

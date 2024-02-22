@@ -56,7 +56,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
         new Date(a.incomeDate || a.expenseDate).getTime()
     );
 
-    this.recentTransactions = allTransactions.slice(0, 4);
+    this.recentTransactions = allTransactions.slice(0, 5);
   }
 
   calculateTotalExpense() {

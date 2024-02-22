@@ -72,6 +72,7 @@ export class ExpensebarchartComponent implements OnInit {
   this.expenseChart = Highcharts.chart('expensechart', {
     chart: {
       type: 'column',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
     },
     title: {
       text: '',

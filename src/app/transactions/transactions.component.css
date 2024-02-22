@@ -1,0 +1,32 @@
+input{
+    border: 1px solid #dfe1e6;
+    border-radius: 4px;
+    width: 100%;
+    padding: 1px;
+    background-color: #fff;
+    font-weight: 400;
+    box-shadow: 0 0 6px #172b4d0a;
+    font-size: 0.85rem;
+    outline: none;
+}
+table tr th {
+    text-align: center;
+    padding: 12px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+  }
+  table tr td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: start;
+    align-items: center;
+    text-align: start;
+    color: rgb(112, 118, 123);
+  }

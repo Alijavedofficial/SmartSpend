@@ -1,1 +1,52 @@
+<div class="px-5">
+<div class="flex flex-row justify-between items-center py-4">
+<h1 class="text-[25px] text-[#0f172a] dark:text-[#fff] font-semibold flex-1">All Transactions</h1>
+<div class="flex gap-2 flex-1">
+    <input type="search" placeholder="Please Enter to Search..." />
+    <select>
+        <option>Filters</option>
+        <option>Filter By Date</option>
+        <option>Filter By Time</option>
+        <option>Filter By Highest</option>
+        <option>Filter By Lowest</option>
+        <option><button>Apply Filter</button></option>
+        <option><button>Remove Filter</button></option>
+    </select>
+    <button class="bg-green-600 h-[40px] rounded-xl" routerLink="/income">Income</button>
+    <button class="bg-[#d14040] h-[40px] rounded-xl" routerLink="/expense">Expense</button>
+</div>
+</div>
 
+<!--Table for all Transactions-->
+
+<table class="w-full table-auto border-collapse  rounded-xl py-5 shadow-custom">
+   <thead class="bg-[#172b4d]">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Detail</th>
+        <th>Created By</th>
+        <th>Amount</th>
+        <th>Action</th>
+    </tr>
+</thead>
+    <tbody class="bg-[#fff]" *ngIf="recentTransactions.length > 0">
+   <tr class="border-b border-[#e5e5e5]" *ngFor="let transaction of displayedTransactions">
+    <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
+    <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
+    <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
+    <td>{{ transaction.type === 'Income' ? transaction.incomeDescription : transaction.expenseDescription}}</td>
+    <td>Aj</td>
+    <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
+    <td>...</td>
+   </tr>
+   
+    </tbody>
+</table>
+<button (click)="prevPage()" [disabled]="!hasPrevPage()">Previous Page</button>
+<button (click)="nextPage()" [disabled]="!hasNextPage()">Next Page</button>
+
+
+
+</div>

@@ -1,4 +1,4 @@
-<mat-sidenav-container class="container">
+<mat-sidenav-container class="container dark:text-white">
     <mat-sidenav class="side bg-white text-[#172b4d] dark:bg-[#111C44] dark:text-[#fff]" mode="side" #sidenav [opened]="isExpanded">
 
   <div class="flex px-5 py-8 gap-4 items-center border-b border-gray-300">
@@ -8,11 +8,11 @@
 
 
 <ul class="py-8">
-    <li class="py-2 cursor-pointer font-semibold text-[#172b4d]" [ngClass]="{'active': isRouteActive('/dashboard')}" routerLink="/dashboard"><span class="sidelink"><i class="fa-solid fa-chart-line"></i></span><a >DashBoard</a></li>
-    <li class="py-2 cursor-pointer font-semibold text-[#172b4d]" [ngClass]="{'active': isRouteActive('/transactions')}" routerLink="/transactions"><span class="sidelink"><i class="fa-solid fa-wallet"></i></span><a >View Transactions</a></li>
-    <li class="py-2 cursor-pointer font-semibold text-[#172b4d]" [ngClass]="{'active': isRouteActive('/income')}" routerLink="/income"><span class="sidelink"><i class="fa-solid fa-money-bill-trend-up "></i></span><a >Income</a></li>
-    <li class="py-2 cursor-pointer font-semibold text-[#172b4d]" [ngClass]="{'active': isRouteActive('/expense')}" routerLink="/expense"><span class="sidelink"><i class="fa-solid fa-money-bill-wave"></i></span><a >Expense</a></li>
-    <li class="py-2 cursor-pointer font-semibold text-[#172b4d]" [ngClass]="{'active': isRouteActive('/signin')}" routerLink="/signin"><span class="sidelink ml-1"><i class="fa-solid fa-lock"></i></span><a >Sign In</a></li>
+    <li class="py-2 cursor-pointer font-semibold text-[#172b4d] dark:text-[#fff]" [ngClass]="{'active': isRouteActive('/dashboard')}" routerLink="/dashboard"><span class="sidelink"><i class="fa-solid fa-chart-line"></i></span><a >DashBoard</a></li>
+    <li class="py-2 cursor-pointer font-semibold text-[#172b4d] dark:text-[#fff]" [ngClass]="{'active': isRouteActive('/transactions')}" routerLink="/transactions"><span class="sidelink"><i class="fa-solid fa-wallet"></i></span><a >View Transactions</a></li>
+    <li class="py-2 cursor-pointer font-semibold text-[#172b4d] dark:text-[#fff]" [ngClass]="{'active': isRouteActive('/income')}" routerLink="/income"><span class="sidelink"><i class="fa-solid fa-money-bill-trend-up "></i></span><a >Income</a></li>
+    <li class="py-2 cursor-pointer font-semibold text-[#172b4d] dark:text-[#fff]" [ngClass]="{'active': isRouteActive('/expense')}" routerLink="/expense"><span class="sidelink"><i class="fa-solid fa-money-bill-wave"></i></span><a >Expense</a></li>
+    <li class="py-2 cursor-pointer font-semibold text-[#172b4d] dark:text-[#fff]" [ngClass]="{'active': isRouteActive('/signin')}" routerLink="/signin"><span class="sidelink ml-1"><i class="fa-solid fa-lock"></i></span><a >Sign In</a></li>
 </ul>
 
 <div class="fixed bottom-12 px-5">
@@ -21,35 +21,35 @@
 </mat-sidenav>
 
 
-<mat-sidenav-content class="content w-full h-full bg-[#F4F7FE] dark:bg-[#202845]">
+<mat-sidenav-content class="content w-full h-full bg-[#F4F7FE] dark:bg-[#0B1437]">
    
     <div class="flex justify-between items-center px-5 py-5 pt-1 w-full max-sm:flex-col">
      <div>
       <div>
-        <p class="text-[15px] text-[#172b4d]">SmartSpend / {{componentName}}</p>
+        <p class="text-[15px] text-[#172b4d] dark:text-[#fff]">SmartSpend / {{componentName}}</p>
       </div>
         <div class="flex gap-3 items-center">
-     <i class="fa-solid fa-circle-arrow-right text-[37px] opacity-85 hover:opacity-100 transition-opacity text-[#172b4d]" (click)="toggleSideBar()"></i>
+     <i class="fa-solid fa-circle-arrow-right text-[37px] opacity-85 hover:opacity-100 transition-opacity text-[#172b4d] dark:text-[#fff]" (click)="toggleSideBar()"></i>
      <div>
        
-        <h1 class="text-[37px] font-bold text-[#172b4d]">{{componentName}}</h1>
+        <h1 class="text-[37px] font-bold text-[#172b4d] dark:text-[#fff]">{{componentName}}</h1>
     </div>
   </div>
   </div>
 
         <div
-          class="bg-white flex gap-4 rounded-s-full rounded-e-full px-2 items-center justify-center shadow-custom"
+          class="bg-white flex gap-4 rounded-s-full rounded-e-full px-2 items-center justify-center shadow-custom dark:text-[#fff] dark:bg-[#111C44]"
         >
           <div class="group">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input placeholder="Search...." type="search" class="input" />
+            <input placeholder="Search...." type="search" class="input dark:bg-[#0B1437] dark:text-[#fff]" />
           </div>
-          <i class="fa-solid fa-bars text-[15px] opacity-55 hover:opacity-100 transition-opacity hidden max-lg:inline-block text-[#172b4d]"></i>
-          <i class="fa-regular fa-bell text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]"></i>
-          <i class="fa-solid fa-circle-exclamation text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]"></i>
+          <i class="fa-solid fa-bars text-[15px] opacity-55 hover:opacity-100 transition-opacity hidden max-lg:inline-block text-[#172b4d] dark:text-[#fff]"></i>
+          <i class="fa-regular fa-bell text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d] dark:text-[#fff]"></i>
+          <i class="fa-solid fa-circle-exclamation text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d] dark:text-[#fff]"></i>
           <span (click)="darkMode.set(!darkMode())" class="mb-0.5">
-          <i class="fa-solid fa-sun text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]" *ngIf="darkMode()"></i>
-          <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d]" *ngIf="!darkMode()"></i>
+          <i class="fa-solid fa-sun text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d] dark:text-[#fff]" *ngIf="darkMode()"></i>
+          <i class="fa-solid fa-moon text-[15px] opacity-55 hover:opacity-100 transition-opacity text-[#172b4d] dark:text-[#fff]" *ngIf="!darkMode()"></i>
         </span>
           <img
             class="rounded-full w-[40px] object-cover h-4/6 cursor-pointer"
@@ -61,7 +61,7 @@
     
       <router-outlet></router-outlet>
       
-
+      <h1 class="text-gray-500 pt-5 pl-7">©2024 SmartSpend. All Rights Reserved</h1>
 </mat-sidenav-content>
 
 </mat-sidenav-container>
