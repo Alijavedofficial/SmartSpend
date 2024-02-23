@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IncomedataService } from '../incomedata.service';
+import { IncomedataService } from '../Services/incomedata.service';
+
 import * as Highcharts from 'highcharts';
 
 @Component({

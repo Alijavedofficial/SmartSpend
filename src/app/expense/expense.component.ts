@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ExpensedataService } from '../expensedata.service';
-import { CalculationsService } from '../calculations.service';
+
+import { ExpensedataService } from '../Services/expensedata.service';
+import { CalculationsService } from '../Services/calculations.service';
+
 
 @Component({
   selector: 'app-expense',

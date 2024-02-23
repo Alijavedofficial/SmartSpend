@@ -6,9 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
-import { IncomedataService } from '../incomedata.service';
-import { CalculationsService } from '../calculations.service';
-import { ExpensedataService } from '../expensedata.service';
+import { IncomedataService } from '../Services/incomedata.service';
+import { ExpensedataService } from '../Services/expensedata.service';
+import { CalculationsService } from '../Services/calculations.service';
 
 @Component({
   selector: 'app-dashboard',

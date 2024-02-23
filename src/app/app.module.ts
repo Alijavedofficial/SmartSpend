@@ -21,6 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavContainer,MatSidenav,MatSidenavContent,MatSidenavModule } from '@angular/material/sidenav';
+import { TruncatePipe } from './Services/truncate.pipe';
+import { IncomedonutComponent } from './incomedonut/incomedonut.component';
 
 
 
@@ -35,7 +37,9 @@ import { MatSidenavContainer,MatSidenav,MatSidenavContent,MatSidenavModule } fro
     DonutchartComponent,
     BarchartComponent,
     ExpensebarchartComponent,
-    LoginComponent
+    LoginComponent,
+    TruncatePipe,
+    IncomedonutComponent
   ],
   imports: [
     BrowserModule,

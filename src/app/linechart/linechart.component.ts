@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { ExpensedataService } from '../expensedata.service';
-import { IncomedataService } from '../incomedata.service';
+import { IncomedataService } from '../Services/incomedata.service';
+import { ExpensedataService } from '../Services/expensedata.service';
 
 @Component({
   selector: 'app-linechart',

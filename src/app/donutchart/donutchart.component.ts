@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
-import { ExpensedataService } from '../expensedata.service';
+import { ExpensedataService } from '../Services/expensedata.service';
 
 @Component({
   selector: 'app-donutchart',
@@ -56,12 +56,12 @@ updateChartData(): void {
 }
 
 getRandomColor(): string {
-  const baseColor = [0, 155, 214]; // RGB values of base color #009bd6
+  const baseColor = [0, 155, 214];
 
-  // Adjust brightness to create shades (0% to 100%)
-  const brightness = Math.floor(Math.random() * 50) + 50; // Random brightness value between 50 and 100
+  
+  const brightness = Math.floor(Math.random() * 50) + 50;
 
-  // Convert RGB values to hexadecimal color code
+
   const hexColor = this.rgbToHex(
     Math.round((baseColor[0] * brightness) / 100),
     Math.round((baseColor[1] * brightness) / 100),

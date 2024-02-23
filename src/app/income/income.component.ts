@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { IncomedataService } from '../incomedata.service';
-import { CalculationsService } from '../calculations.service';
-
+import { IncomedataService } from '../Services/incomedata.service';
+import { ExpensedataService } from '../Services/expensedata.service';
+import { CalculationsService } from '../Services/calculations.service';
 @Component({
   selector: 'app-income',
   templateUrl: './income.component.html',

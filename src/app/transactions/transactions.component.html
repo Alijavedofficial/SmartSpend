@@ -2,15 +2,14 @@
 <div class="flex flex-row justify-between items-center py-4">
 <h1 class="text-[25px] text-[#0f172a] dark:text-[#fff] font-semibold flex-1">All Transactions</h1>
 <div class="flex gap-2 flex-1">
-    <input type="search" placeholder="Please Enter to Search..." />
-    <select>
-        <option>Filters</option>
-        <option>Filter By Date</option>
-        <option>Filter By Time</option>
-        <option>Filter By Highest</option>
-        <option>Filter By Lowest</option>
-        <option><button>Apply Filter</button></option>
-        <option><button>Remove Filter</button></option>
+    <input type="search" placeholder="Please Enter to Search..." class="dark:bg-[#111C44]" />
+    <select class="dark:bg-[#111C44]" [(ngModel)]="selectedFilter" (change)="loadTransactionsWithFilter(selectedFilter)" name="Filter">
+        <option value="" disabled selected hidden>Filter</option>
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+        <option value="highestPrice">Highest</option>
+        <option value="lowestPrice">Lowest</option>
+      
     </select>
     <button class="bg-green-600 h-[40px] rounded-xl" routerLink="/income">Income</button>
     <button class="bg-[#d14040] h-[40px] rounded-xl" routerLink="/expense">Expense</button>
@@ -19,8 +18,8 @@
 
 <!--Table for all Transactions-->
 
-<table class="w-full table-auto border-collapse  rounded-xl py-5 shadow-custom">
-   <thead class="bg-[#172b4d]">
+<table class="w-full table-auto border-collapse  rounded-xl  shadow-custom">
+   <thead class="bg-[#172b4d]  dark:border-b dark:border-[#e5e5e5]">
     <tr>
         <th>Title</th>
         <th>Status</th>
@@ -31,22 +30,24 @@
         <th>Action</th>
     </tr>
 </thead>
-    <tbody class="bg-[#fff]" *ngIf="recentTransactions.length > 0">
-   <tr class="border-b border-[#e5e5e5]" *ngFor="let transaction of displayedTransactions">
+    <tbody class="bg-[#fff] dark:bg-[#111C44] dark:text-[#fff]" *ngIf="recentTransactions.length > 0">
+   <tr class="border-b border-[#e9ecef]" *ngFor="let transaction of displayedTransactions">
     <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
     <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
     <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
-    <td>{{ transaction.type === 'Income' ? transaction.incomeDescription : transaction.expenseDescription}}</td>
+    <td>{{ transaction.type === 'Income' ? transaction.incomeDescription : transaction.expenseDescription | truncate:15 }}</td>
     <td>Aj</td>
     <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
-    <td>...</td>
+    <td><img src="https://cdn-icons-png.freepik.com/256/6861/6861362.png?uid=R120008979&ga=GA1.1.161877072.1706307699&" class="w-[22px]" /></td>
    </tr>
    
     </tbody>
 </table>
-<button (click)="prevPage()" [disabled]="!hasPrevPage()">Previous Page</button>
-<button (click)="nextPage()" [disabled]="!hasNextPage()">Next Page</button>
 
+<div class="flex">
+<button (click)="prevPage()" [disabled]="!hasPrevPage()"><i class="fa-solid fa-arrow-left"></i>Prev Page</button>
+<button (click)="nextPage()" [disabled]="!hasNextPage()">Next Page<i class="fa-solid fa-arrow-right"></i> </button>
+</div>
 
 
 </div>
