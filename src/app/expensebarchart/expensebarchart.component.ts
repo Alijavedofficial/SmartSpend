@@ -25,13 +25,13 @@ export class ExpensebarchartComponent implements OnInit {
     const expenseData: number[] = [];
   
     
-    for (let i = 5; i >= 0; i--) {
+    for (let i = 7; i >= 0; i--) {
       const date = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
       lastSixMonthsCategories.push(date.toLocaleString('default', { month: 'short' }));
     }
   
     
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
       expenseData.push(0);
     }
   
@@ -41,7 +41,7 @@ export class ExpensebarchartComponent implements OnInit {
       const monthIndex = date.getMonth();
       const monthDiff = (currentDate.getMonth() - monthIndex + 12) % 12;
   
-      if (monthDiff < 6) {
+      if (monthDiff < 8) {
         expenseData[monthDiff] += expense.expenseAmount;
       }
     });

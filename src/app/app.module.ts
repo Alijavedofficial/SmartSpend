@@ -23,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavContainer,MatSidenav,MatSidenavContent,MatSidenavModule } from '@angular/material/sidenav';
 import { TruncatePipe } from './Services/truncate.pipe';
 import { IncomedonutComponent } from './incomedonut/incomedonut.component';
+import { SearchFilterPipePipe } from './Services/search-filter-pipe.pipe';
+
 
 
 
@@ -39,7 +41,8 @@ import { IncomedonutComponent } from './incomedonut/incomedonut.component';
     ExpensebarchartComponent,
     LoginComponent,
     TruncatePipe,
-    IncomedonutComponent
+    IncomedonutComponent,
+    SearchFilterPipePipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { IncomedonutComponent } from './incomedonut/incomedonut.component';
     MatSidenavModule,
     MatSidenav,
     MatSidenavContent,
-    MatSidenavContainer
+    MatSidenavContainer,
+    
   ],
   providers: [
     provideAnimationsAsync()

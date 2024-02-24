@@ -2,7 +2,7 @@
 <div class="flex flex-row justify-between items-center py-4">
 <h1 class="text-[25px] text-[#0f172a] dark:text-[#fff] font-semibold flex-1">All Transactions</h1>
 <div class="flex gap-2 flex-1">
-    <input type="search" placeholder="Please Enter to Search..." class="dark:bg-[#111C44]" />
+    <input type="search" placeholder="Please Enter to Search..." class="dark:bg-[#111C44]" [(ngModel)]="searchText" />
     <select class="dark:bg-[#111C44]" [(ngModel)]="selectedFilter" (change)="loadTransactionsWithFilter(selectedFilter)" name="Filter">
         <option value="" disabled selected hidden>Filter</option>
         <option value="newest">Newest</option>
@@ -31,7 +31,7 @@
     </tr>
 </thead>
     <tbody class="bg-[#fff] dark:bg-[#111C44] dark:text-[#fff]" *ngIf="recentTransactions.length > 0">
-   <tr class="border-b border-[#e9ecef]" *ngFor="let transaction of displayedTransactions">
+   <tr class="border-b border-[#e9ecef]" *ngFor="let transaction of (recentTransactions | searchFilter: searchText)">
     <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
     <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
     <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>

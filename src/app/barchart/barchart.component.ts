@@ -21,24 +21,46 @@ export class BarchartComponent implements OnInit {
   }
 
   updateChartData():void {
-      const incomeByMonth: {[key: string]: number} = {};
-
-      this.incomedataservice.getIncomeData().forEach(income => {
-        const date = new Date(income.incomeDate);
-        const monthKey = `${date.getFullYear()}-${date.getMonth() + 1}`;
-        incomeByMonth[monthKey] = (incomeByMonth[monthKey] || 0) + income.incomeAmount;
-      })
-
-      const allMonths = new Set([
-        ...Object.keys(incomeByMonth)
-      ])
-
-      const incomeData: number[] = [];
-      allMonths.forEach(month => {
-        incomeData.push(incomeByMonth[month] || 0);
-      })
+    const currentDate = new Date();
+    const lastSixMonthsCategories: string[] = [];
+    const incomeData: number[] = [];
+  
+    
+    for (let i = 7; i >= 0; i--) {
+      const date = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
+      lastSixMonthsCategories.push(date.toLocaleString('default', { month: 'short' }));
+    }
+  
+    
+    for (let i = 0; i < 8; i++) {
+      incomeData.push(0);
+    }
+  
+    
+    this.incomedataservice.getIncomeData().forEach(income => {
+      const date = new Date(income.incomeDate);
+      const monthIndex = date.getMonth();
+      const monthDiff = (currentDate.getMonth() - monthIndex + 12) % 12;
+  
+      if (monthDiff < 8) {
+        incomeData[monthDiff] += income.incomeAmount;
+      }
+    });
+  
+    lastSixMonthsCategories.reverse();
 
       this.barChart.update({
+        xAxis: {
+          categories: lastSixMonthsCategories,
+          lineWidth: 0,
+          labels: {
+            style: {
+              fontSize: '11px',
+              fontWeight: 'semibold',
+              color: '#818589',
+            }
+          },
+        },
         series:[
           {
             type:'bar',

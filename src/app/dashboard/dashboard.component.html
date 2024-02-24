@@ -76,9 +76,9 @@
 </div>
 
                                  <!--Line chart and bar chart displaying container-->
-  <div class="grid grid-cols-6 max-sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-6 2xl:grid-cols-6 3xl:grid-cols-6 gap-5 mt-5" >
+  <div class="grid grid-cols-10 max-sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-10 2xl:grid-cols-10 3xl:grid-cols-10 gap-5 mt-5" >
     <!--Line Chart-->
-    <div class="bg-white p-1 rounded-xl shadow-custom col-span-4 dark:bg-[#111C44]" >
+    <div class="bg-white p-1 rounded-xl shadow-custom col-span-7 dark:bg-[#111C44]" >
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3 dark:text-white">Gainings VS Spendings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5 dark:bg-[#0B1437] dark:text-white"
@@ -87,7 +87,7 @@
       <app-linechart></app-linechart>
     </div>
     <!--Bar Chart-->
-    <div class="bg-white rounded-xl shadow-custom col-span-2 dark:bg-[#111C44]">
+    <div class="bg-white rounded-xl shadow-custom col-span-3 dark:bg-[#111C44]">
       <div class="flex p-4 justify-between">
         <h1 class="text-[18px] font-bold pb-3 dark:text-white">Monthly Earnings</h1>
         <span class="text-[#009bd6] font-light text-[18px] bg-slate-100 rounded-full py-1 px-2.5 dark:bg-[#0B1437] dark:text-white"
@@ -100,7 +100,7 @@
 
 
   <div class="grid grid-cols-10 max-sm:grid-cols-1 md:grid-cols-10 lg:grid-cols-10 2xl:grid-cols-10 3xl:grid-cols-10 gap-5 mt-5">
-    <div class="bg-white rounded-xl p-4 shadow-custom col-span-5 dark:bg-[#111C44]">
+    <div class="bg-white rounded-xl p-4 shadow-custom col-span-4 dark:bg-[#111C44]">
     
       <div class="flex  justify-between">
         <h1 class="text-[18px] font-bold pb-3 dark:text-white">Recent History</h1>
@@ -110,16 +110,18 @@
 
       <div>
         <table class="w-full table-auto border-collapse  rounded-xl">
-          <tr class="grid grid-cols-4 gap-4 border-b border-gray-300">
+          <thead class="border-b border-gray-300">
+          <tr >
             <th>Name</th>
-            <th>Status</th>
+            
            <th>Date</th>
            <th>Amount</th>
           </tr>
+        </thead>
           <tbody *ngIf="recentTransactions.length > 0">
-            <tr *ngFor="let transaction of recentTransactions" class="grid grid-cols-4 gap-4">
+            <tr *ngFor="let transaction of recentTransactions" class="">
               <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeTitle : transaction.expenseTitle }}</td>
-              <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">{{ transaction.type }}</td>
+            
               <td class="dark:text-white">{{ transaction.type === 'Income' ? transaction.incomeDate : transaction.expenseDate }}</td>
                 <td [ngStyle]="{'color': transaction.type === 'Income' ? 'green' : 'red'}">${{ transaction.type === 'Income' ? transaction.incomeAmount : transaction.expenseAmount }}</td>
             </tr>
@@ -130,7 +132,7 @@
     </div>
 
 
-    <div class='grid grid-cols-2 gap-5 col-span-5'>
+    <div class='grid grid-cols-2 gap-5 col-span-6'>
       <div class="bg-white rounded-xl shadow-custom dark:bg-[#111C44]">
         <div class="flex p-4 justify-between">
           <h1 class="text-[18px] font-bold pb-3 dark:text-white">Monthly Spendings</h1>

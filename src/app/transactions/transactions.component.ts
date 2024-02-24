@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IncomedataService } from '../Services/incomedata.service';
 import { ExpensedataService } from '../Services/expensedata.service';
+import { transition } from '@angular/animations';
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
@@ -11,11 +12,13 @@ export class TransactionsComponent implements OnInit  {
   rowsPerPage = 20;
   currentPage = 1;
   selectedFilter: string = '';
+  searchText: string = '';
 constructor(private incomedataservice:IncomedataService,private expensedataservice:ExpensedataService) {}
   ngOnInit(): void {
       this.loadRecentTransactions('newest')
-      
   }
+
+
 
   loadTransactionsWithFilter(filter: string): void {
     this.loadRecentTransactions(filter);
@@ -27,6 +30,7 @@ constructor(private incomedataservice:IncomedataService,private expensedataservi
       ...this.expensedataservice.ExpenseData.map((expense) => ({ ...expense, type: 'Expense' })),
     ];
   
+    
     // Apply filter if provided
     if (filter) {
       switch (filter) {
@@ -51,7 +55,7 @@ constructor(private incomedataservice:IncomedataService,private expensedataservi
           AllTransactions.sort((a, b) => new Date(a.incomeDate || a.expenseDate).getTime() - new Date(b.incomeDate || b.expenseDate).getTime());
           break;
         default:
-          
+          AllTransactions.sort((a, b) => new Date(b.incomeDate || b.expenseDate).getTime() - new Date(a.incomeDate || a.expenseDate).getTime());
           break;
       }
     }
