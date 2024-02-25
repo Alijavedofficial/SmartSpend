@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IncomedataService } from '../Services/incomedata.service';
+import { PageEvent } from '@angular/material/paginator';
 import { ExpensedataService } from '../Services/expensedata.service';
-import { transition } from '@angular/animations';
+import { IncomedataService } from '../Services/incomedata.service';
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
@@ -9,16 +9,17 @@ import { transition } from '@angular/animations';
 })
 export class TransactionsComponent implements OnInit  {
   recentTransactions: any[] = [];
-  rowsPerPage = 20;
-  currentPage = 1;
-  selectedFilter: string = '';
+  currentPage = 0;
+  selectedFilter: string = ''; 
   searchText: string = '';
 constructor(private incomedataservice:IncomedataService,private expensedataservice:ExpensedataService) {}
   ngOnInit(): void {
       this.loadRecentTransactions('newest')
   }
 
-
+handlePageEvent(PageEvent: PageEvent): void  {
+   this.currentPage = PageEvent.pageIndex;
+} 
 
   loadTransactionsWithFilter(filter: string): void {
     this.loadRecentTransactions(filter);
@@ -67,36 +68,6 @@ constructor(private incomedataservice:IncomedataService,private expensedataservi
 
 
 
-get startIndex(): number {
-  return (this.currentPage - 1) * this.rowsPerPage;
-}
 
-get endIndex(): number {
-  return this.startIndex + this.rowsPerPage;
-}
-
-get displayedTransactions(): any[] {
-  return this.recentTransactions.slice(this.startIndex, this.endIndex);
-}
-
-nextPage(): void {
-  if (this.hasNextPage()) {
-    this.currentPage++;
-  }
-}
-
-prevPage(): void {
-  if (this.hasPrevPage()) {
-    this.currentPage--;
-  }
-}
-
-hasNextPage(): boolean {
-  return this.endIndex < this.recentTransactions.length;
-}
-
-hasPrevPage(): boolean {
-  return this.startIndex > 0;
-}
   
 }

@@ -24,6 +24,8 @@ import { MatSidenavContainer,MatSidenav,MatSidenavContent,MatSidenavModule } fro
 import { TruncatePipe } from './Services/truncate.pipe';
 import { IncomedonutComponent } from './incomedonut/incomedonut.component';
 import { SearchFilterPipePipe } from './Services/search-filter-pipe.pipe';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { GoalsComponent } from './goals/goals.component';
 
 
 
@@ -42,7 +44,8 @@ import { SearchFilterPipePipe } from './Services/search-filter-pipe.pipe';
     LoginComponent,
     TruncatePipe,
     IncomedonutComponent,
-    SearchFilterPipePipe
+    SearchFilterPipePipe,
+    GoalsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { SearchFilterPipePipe } from './Services/search-filter-pipe.pipe';
     MatSidenav,
     MatSidenavContent,
     MatSidenavContainer,
-    
+    MatPaginatorModule
   ],
   providers: [
     provideAnimationsAsync()

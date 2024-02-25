@@ -1,0 +1,12 @@
+<div>
+    <form [formGroup]="goalForm" class="flex flex-col">
+        <input type="text" placeholder="Enter Goal Name..."  formControlName="goalName"/>
+        <input type="number" placeholder="Enter Target Amount"  formControlName="goalAmount"/>
+        <input type="date" placeholder="Enter Deadline" formControlName="goalDate"/>
+        <input type="number" placeholder="Priority"  formControlName="goalPriority"/>
+        <select formControlName="goalCategory">
+            <option>Category</option>
+        </select>
+        <textarea placeholder="Goal Description" formControlName="goalDescription"></textarea>
+    </form>
+</div>

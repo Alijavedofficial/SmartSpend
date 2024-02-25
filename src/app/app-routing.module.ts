@@ -5,6 +5,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { IncomeComponent } from './income/income.component';
 import { ExpenseComponent } from './expense/expense.component';
 import { LoginComponent } from './login/login.component';
+import { GoalsComponent } from './goals/goals.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'income', component: IncomeComponent, data: {title: 'Incomes'}},
   {path: 'expense', component:ExpenseComponent, data: {title: 'Expenses'}},
   {path: 'signin', component:LoginComponent, data: {title: 'Sign In'}},
+  {path: 'goals', component: GoalsComponent, data: {title: 'Financial Goals'}},
 ];
 
 @NgModule({

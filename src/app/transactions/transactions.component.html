@@ -44,10 +44,10 @@
     </tbody>
 </table>
 
-<div class="flex">
-<button (click)="prevPage()" [disabled]="!hasPrevPage()"><i class="fa-solid fa-arrow-left"></i>Prev Page</button>
-<button (click)="nextPage()" [disabled]="!hasNextPage()">Next Page<i class="fa-solid fa-arrow-right"></i> </button>
-</div>
+<mat-paginator [length]="recentTransactions.length" [pageSize]="10" [showFirstLastButtons]="true" [pageSizeOptions]="[10,20,25,30]"
+[pageIndex]="currentPage" (page)="handlePageEvent($event)" >
+
+</mat-paginator>
 
 
 </div>
