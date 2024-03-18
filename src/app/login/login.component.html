@@ -5,13 +5,13 @@
       </div>
       <div class="flex flex-wrap   sm:px-6 xl:px-12 items-center justify-center">
         
-        <div class=" max-w-full px-1 flex-0 gap-5 ">
+        <div class=" max-w-full px-1 flex-0 gap-5" (click)="signInWithApple()">
           <a class="flex w-full px-3 py-3 mb-4 dark:bg-[#0B1437] dark:border-none  font-bold text-center justify-center items-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75 gap-3 dark:text-[#fff]">
             <i class="fa-brands fa-apple text-black dark:text-[#fff] text-[22px]"></i>
             <span class="text-black dark:text-[#fff]">Continue with Apple</span>
           </a>
         </div>
-        <div class=" max-w-full px-1  flex-0">
+        <div class=" max-w-full px-1  flex-0" (click)="signInWithGoogle()">
           <a class="flex w-full px-3 py-3 mb-4 font-bold dark:bg-[#0B1437] dark:border-none  text-center items-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75 gap-3">
             <i class="fa-brands fa-google text-black dark:text-[#fff] text-[20px] bg-gradient-to-r from-red-500 to-yellow-500 text-transparent bg-clip-text"></i>
             <span class="text-black dark:text-[#fff]">Continue with Google</span>
@@ -22,7 +22,8 @@
         </div>
       </div>
       <div class="flex-auto p-6">
-        <form role="form text-left" [formGroup]="loginForm">
+
+        <form role="form text-left" [formGroup]="loginForm" >
           <div class="mb-4">
             <input aria-describedby="email-addon" aria-label="Name" placeholder="Enter Name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900  focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="text">
           </div>
@@ -42,7 +43,7 @@
   </div>
   
           <div class="text-center">
-            <button (click)="login()" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white  bg-[#0f172a] uppercase align-middle transition-all rounded-md cursor-pointer active:opacity-80 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:border-gray-100 hover:opacity-100 dark:bg-[#0B1437]">Sign up</button>
+            <button (click)="onSubmit()" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white  bg-[#0f172a] uppercase align-middle transition-all rounded-md cursor-pointer active:opacity-80 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:border-gray-100 hover:opacity-100 dark:bg-[#0B1437]">Sign up</button>
           </div>
           <p class="mt-4 mb-0 leading-normal text-sm">Already have an account? <a class="font-bold text-slate-700 dark:text-[#fff]" href="../pages/sign-in.html">Sign in</a></p>
           <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>

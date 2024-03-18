@@ -1,52 +1,59 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Auth, GoogleAuthProvider, OAuthProvider, createUserWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { getAuth } from 'firebase/auth';
+import { signInWithRedirect } from 'firebase/auth';
+import firebase from 'firebase/compat/app';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
 
   loginForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private afAuth: AngularFireAuth, private router: Router) {
+  constructor(private fb: FormBuilder, public auth: Auth, private router: Router) {
     this.loginForm = this.fb.group({
-      email: [''],
-      password: ['']
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
     });
   }
 
-  ngOnInit(): void {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.router.navigate(['/dashboard']);
-      } else {
-        
-      }
-    });
-  }
 
-  login() {
-    if (this.loginForm.invalid) {
-      this.errorMessage = 'Please enter valid email and password.';
-      return;
-    }
-    const email = this.loginForm.get('email')?.value;
-    const password = this.loginForm.get('password')?.value;
-
+  onSubmit() {
+    createUserWithEmailAndPassword(this.auth, this.loginForm.value.email, this.loginForm.value.password)
+    .then((response: any) => {
+     this.router.navigate(['/dashboard'])
+     })
+     .catch((error: any) => {
+       console.log(error);
+     });
     
-    this.afAuth.signInWithEmailAndPassword(email,password)
-    .then((userCredential) => {
-      this.router.navigate(['/dashboard']);
-    })
-    .catch((error) => {
-        this.errorMessage = error.message;
-      });
   }
+ 
+  signInWithGoogle() {
+     signInWithPopup(this.auth, new GoogleAuthProvider())
+     .then((userCredential) => {
+       this.router.navigate(['/']);
+     })
+     .catch((error) => {
+       console.error('Google sign-in error:', error);
+     });
+ }
+
+ signInWithApple() {
+
+  
+ }
+
+ 
+
   
 
 }
