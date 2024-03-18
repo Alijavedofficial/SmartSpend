@@ -26,7 +26,9 @@ import { IncomedonutComponent } from './incomedonut/incomedonut.component';
 import { SearchFilterPipePipe } from './Services/search-filter-pipe.pipe';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { GoalsComponent } from './goals/goals.component';
-
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { environment } from '../environments/environment';
 
 
 
@@ -62,7 +64,18 @@ import { GoalsComponent } from './goals/goals.component';
     MatSidenav,
     MatSidenavContent,
     MatSidenavContainer,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyDas8BOaxt0Tl0MVjxrGxAZHwj86lHUweU",
+  authDomain: "spendsmart-a7a14.firebaseapp.com",
+  projectId: "spendsmart-a7a14",
+  storageBucket: "spendsmart-a7a14.appspot.com",
+  messagingSenderId: "463978890850",
+  appId: "1:463978890850:web:3ca1b02e4a28e22409f33b",
+  measurementId: "G-2LSW2JQ04P"
+    }),
+  
   ],
   providers: [
     provideAnimationsAsync()

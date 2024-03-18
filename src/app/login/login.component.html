@@ -22,15 +22,15 @@
         </div>
       </div>
       <div class="flex-auto p-6">
-        <form role="form text-left">
+        <form role="form text-left" [formGroup]="loginForm">
           <div class="mb-4">
             <input aria-describedby="email-addon" aria-label="Name" placeholder="Enter Name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900  focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="text">
           </div>
           <div class="mb-4">
-            <input aria-describedby="email-addon" aria-label="Email" placeholder="Enter Email" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="email">
+            <input aria-describedby="email-addon" aria-label="Email" formControlName="email" placeholder="Enter Email" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="email">
           </div>
           <div class="mb-4">
-            <input aria-describedby="password-addon" aria-label="Password" placeholder="Enter Password" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="password">
+            <input aria-describedby="password-addon" formControlName="password" aria-label="Password" placeholder="Enter Password" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-gray-900 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow hover:border-gray-900 dark:bg-[#0B1437] dark:border-none" type="password">
           </div>
           <div class="min-h-6 pl-7 mb-0.5 block items-center">
     <input [checked]="false" value="" type="checkbox" class="w-5 h-5 ease-soft -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-gray-900 checked:to-slate-800 after:duration-250 after:ease-soft-in-out duration-250 relative float-left cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100 dark:bg-[#0B1437]   dark:border-none" id="terms">
@@ -42,9 +42,10 @@
   </div>
   
           <div class="text-center">
-            <button class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white  bg-[#0f172a] uppercase align-middle transition-all rounded-md cursor-pointer active:opacity-80 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:border-gray-100 hover:opacity-100 dark:bg-[#0B1437]">Sign up</button>
+            <button (click)="login()" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white  bg-[#0f172a] uppercase align-middle transition-all rounded-md cursor-pointer active:opacity-80 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:border-gray-100 hover:opacity-100 dark:bg-[#0B1437]">Sign up</button>
           </div>
           <p class="mt-4 mb-0 leading-normal text-sm">Already have an account? <a class="font-bold text-slate-700 dark:text-[#fff]" href="../pages/sign-in.html">Sign in</a></p>
+          <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
         </form>
       </div>
     </div>
