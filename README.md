@@ -63,15 +63,6 @@ SpendSmart is an Angular-based income and expense tracker designed to help users
 5. **Access the Application:**
     - Open your web browser and navigate to `http://localhost:4200`
 
----
-
-## Screenshots:
-
-![Screenshot 1](/screenshots/screenshot1.png)
-![Screenshot 2](/screenshots/screenshot2.png)
-
----
-
 ## Contribution Guidelines:
 - Fork the repository.
 - Create a new branch for your feature (`git checkout -b feature-name`).
