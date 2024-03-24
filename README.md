@@ -24,7 +24,6 @@ SpendSmart is an Angular-based income and expense tracker designed to help users
 5. **Financial Goal Setting:**
     - SpendSmart enables users to set financial goals, such as savings targets or debt reduction milestones, to stay focused on their financial objectives.
 
----
 
 ## Technologies Used:
 - Angular
