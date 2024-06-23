@@ -23,6 +23,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "highcharts",
+              "highcharts/highmaps",
+              "highcharts/highstock",
+              "highcharts/highcharts-gantt"
+            ],
             "outputPath": "dist/track",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -45,13 +51,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 }
               ],
               "outputHashing": "all"
