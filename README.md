@@ -30,61 +30,10 @@ SpendSmart is an Angular-based income and expense tracker designed to help users
 - Firebase Authentication (for user authentication)
 - Firebase Firestore (for data storage)
 
----
-
-## Setup Instructions:
-
-1. **Clone Repository:**
-    ```
-    git clone https://github.com/your-username/spendsmart.git
-    ```
-
-2. **Install Dependencies:**
-    ```
-    cd spendsmart
-    npm install
-    ```
-
-3. **Set Up Firebase:**
-    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-    - Enable Authentication and Firestore services for your project
-    - Obtain your Firebase configuration credentials
-    - Replace the Firebase configuration in `src/environments/environment.ts` with your credentials
-
-4. **Run the Application:**
-    ```
-    ng serve
-    ```
-
-5. **Access the Application:**
-    - Open your web browser and navigate to `http://localhost:4200`
-
-## Contribution Guidelines:
-- Fork the repository.
-- Create a new branch for your feature (`git checkout -b feature-name`).
-- Implement your feature or fix bugs.
-- Commit your changes (`git commit -am 'Add new feature'`).
-- Push to the branch (`git push origin feature-name`).
-- Create a new Pull Request.
-
----
-
-## Contributors:
-- [Your Name](https://github.com/your-username)
-- [Contributor 1](https://github.com/contributor1)
-- [Contributor 2](https://github.com/contributor2)
-
----
-
-## License:
-This project is licensed under the [MIT License](LICENSE).
-
----
+## Video
+https://github.com/user-attachments/assets/65050ceb-517e-47d3-a36c-6a92de612163
 
 ## Contact:
 For any inquiries or support, please contact [alijavedofficial0007@gmail.com](mailto:alijavedofficial0007@gmail.com).
 
----
-
-Feel free to customize this README according to your project's specific details and requirements. Happy coding!
 
